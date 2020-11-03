@@ -1,0 +1,72 @@
+<div class="container-fluid text-center d-none d-lg-block">
+  <div class="row">
+    <div class="col-10 mx-auto col-lg-2">
+      <p class="text-uppercase font-weight-bold">Produtos</p>
+    </div>
+    <div class="col-10 mx-auto col-lg-2">
+      <p class="text-uppercase font-weight-bold">Nome do produto</p>
+    </div>
+    <div class="col-10 mx-auto col-lg-2">
+      <p class="text-uppercase font-weight-bold">Preço R$</p>
+    </div>
+    <div class="col-10 mx-auto col-lg-2">
+      <p class="text-uppercase font-weight-bold">Quantidade</p>
+    </div>
+    <div class="col-10 mx-auto col-lg-2">
+      <p class="text-uppercase font-weight-bold">Remover</p>
+    </div>
+    <div class="col-10 mx-auto col-lg-2">
+      <p class="text-uppercase font-weight-bold">Total</p>
+    </div>
+  </div>
+</div>
+<!-- Carrinho Items -->
+<div class="container-fluid">
+  <app-carrinho-item></app-carrinho-item>
+  <app-carrinho-item></app-carrinho-item>
+  <app-carrinho-item></app-carrinho-item>
+</div>
+
+<!-- Total -->
+<div class="container">
+  <div class="row">
+    <div
+      class="col-10 col-lg-6 mx-auto ml-md-auto mr-sm-0 my-5 text-capitalize card bg-light p-5"
+    >
+      <h4 class="mb-4">Resumo do pedido</h4>
+      <h5 class="d-flex justify-content-between">
+        <span class="text-title"> subtotal: </span>
+        <strong> R$ 47,97</strong>
+      </h5>
+      <h5 class="d-flex justify-content-between">
+        <span class="text-title"> frete: </span>
+        <strong> R$ 15,00</strong>
+      </h5>
+      <h5 class="d-flex justify-content-between">
+        <span class="text-title"> total: </span>
+        <strong> R$ 62,97</strong>
+      </h5>
+      <hr />
+      <div class="d-flex flex-column">
+        <a>
+          <button
+            class="btn btn-outline-danger text-uppercase mb-3 px-5 w-100"
+            type="button"
+          >
+            <i class="fas fa-ban mr-3"></i>
+            <span class="d-md-inline d-none">Esvaziar Carrinho</span>
+          </button>
+        </a>
+        <a>
+          <button
+            class="btn btn-outline-success btn-lg text-uppercase mb-3 px-5 w-100"
+            type="button"
+          >
+            <i class="fas fa-shopping-basket mr-3"></i>
+            Comprar
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
