@@ -11,6 +11,7 @@ import { SobreComponent } from './pages/sobre/sobre.component';
 import { ProdutoComponent } from './pages/produto/produto.component';
 import { CardItemComponent } from './components/card-item/card-item.component';
 import { CarrinhoItemComponent } from './components/carrinho-item/carrinho-item.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { CarrinhoItemComponent } from './components/carrinho-item/carrinho-item.
     CardItemComponent,
     CarrinhoItemComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],
 })
