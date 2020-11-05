@@ -11,6 +11,10 @@ h6 {
   font-family: Work Sans, sans-serif;
 }
 
+.height-100 {
+  min-height: 100vh;
+}
+
 .card-hover {
   cursor: pointer;
   -moz-transition: all 0.3s;

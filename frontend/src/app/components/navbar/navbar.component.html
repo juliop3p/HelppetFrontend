@@ -1,23 +1,49 @@
 <!--Inicio Nav Bar-->
-<nav class="navbar navbar-expand-l" style="background-color: #04bf58;">
+<div class="container-fluid p-0">
+  <nav class="navbar navbar-expand-l" style="background-color: #04bf58">
+    <!--Logotipo -->
+    <a href="#" class="navbar-left"><img src="assets/logo.png" /></a>
+    <!--Logotipo -->
 
-  <!--Logotipo -->
-  <a href="#" class="navbar-left"><img src="assets/logo.png"></a>
-  <!--Logotipo -->
-
-  <!--Button pesquisar-->
+    <!--Button pesquisar-->
     <form action="" method="post">
-      <input type="search" name="" id="">
-      <img src="https://img.icons8.com/fluent-systems-regular/24/000000/search.png"/>
+      <input type="search" name="" id="" />
+      <img
+        src="https://img.icons8.com/fluent-systems-regular/24/000000/search.png"
+      />
     </form>
-<!--Fim button pesquisar-->
-
-
-</nav>
-
-
-
-
-
-
-
+    <!--Fim button pesquisar-->
+  </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-success">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Menu
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Cadeiras e próteses</a>
+            <a class="dropdown-item" href="#">Cachorros</a>
+            <a class="dropdown-item" href="#">Gatos</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#" routerLink="/sobre"
+            >Quem somos</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#">Entre em contato</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
