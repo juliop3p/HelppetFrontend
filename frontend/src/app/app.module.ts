@@ -14,6 +14,7 @@ import { CarrinhoItemComponent } from './components/carrinho-item/carrinho-item.
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { LoginComponent } from './pages/login/login.component';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { LoginComponent } from './pages/login/login.component';
     CadastroComponent,
     LoginComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
+  imports: [BrowserModule, AppRoutingModule, FontAwesomeModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
