@@ -18,7 +18,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #9bdc28;
+  background: var(--color-green);
   clip-path: circle(150px at 80% 20%);
   transition: 0.5s ease-in-out;
 }
@@ -26,19 +26,6 @@
 .container .card:hover:before {
   clip-path: circle(300px at 80% -20%);
 }
-
-.container .card:after {
-  content: "Iphone";
-  position: absolute;
-  top: 30%;
-  left: 0%;
-  text-align: center;
-  font-size: 5em;
-  font-weight: 800;
-  font-style: italic;
-  color: rgba(0, 0, 0, 0.26);
-}
-
 .container .card .imgBx {
   position: absolute;
   top: 50%;

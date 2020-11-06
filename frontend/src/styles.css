@@ -1,14 +1,37 @@
+:root {
+  --color-green: #04bf58;
+  --color-green-secondary: #07b154;
+  --color-blue: #007dc5;
+  --color-blue-secondary: #007dc5;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: Righteous, sans-serif;
+  font-family: Work Sans, sans-serif;
 }
 
 * {
-  font-family: Work Sans, sans-serif;
+  font-family: Roboto, sans-serif;
+}
+
+.bg-green {
+  background-color: var(--color-green);
+}
+
+.bg-green-dark {
+  background-color: var(--color-green-secondary);
+}
+
+.bg-blue {
+  background-color: var(--color-blue);
+}
+
+.bg-blue-dark {
+  background-color: var(--color-blue-secondary);
 }
 
 .height-100 {

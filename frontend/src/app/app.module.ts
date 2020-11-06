@@ -12,6 +12,8 @@ import { ProdutoComponent } from './pages/produto/produto.component';
 import { CardItemComponent } from './components/card-item/card-item.component';
 import { CarrinhoItemComponent } from './components/carrinho-item/carrinho-item.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ProdutoComponent,
     CardItemComponent,
     CarrinhoItemComponent,
+    CadastroComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
