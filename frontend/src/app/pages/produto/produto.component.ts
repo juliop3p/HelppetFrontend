@@ -3,13 +3,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-produto',
   templateUrl: './produto.component.html',
-  styleUrls: ['./produto.component.css']
+  styleUrls: ['./produto.component.css'],
 })
 export class ProdutoComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    window.scroll(0, 0);
   }
-
 }

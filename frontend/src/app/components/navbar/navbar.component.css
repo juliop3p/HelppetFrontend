@@ -1,1 +1,51 @@
+.input-search {
+  width: 60%;
+  margin-left: 32px;
+}
 
+.input-icon {
+  max-width: 800px;
+  min-width: 370px;
+  width: 100%;
+  height: 48px;
+  background: #fff;
+  overflow: hidden;
+  border: 1px solid #fff;
+  border-radius: 8px;
+
+  display: grid;
+  grid-template-columns: 90% 10%;
+  align-items: center;
+}
+
+.input-icon button {
+  display: flex;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 100%;
+  background-color: var(--color-blue);
+  color: #fff;
+}
+
+.input-icon button:hover {
+  opacity: 0.8;
+}
+
+.input-icon input {
+  border: 0;
+  background: #fff;
+  text-indent: 8px;
+  outline: none;
+}
+
+ul li a {
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.4ms ease-in-out !important;
+}
+
+ul li a:hover {
+  color: var(--color-blue) !important;
+}

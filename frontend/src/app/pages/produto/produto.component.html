@@ -1,34 +1,28 @@
-<div class="container p-4">
+<div class="container mt-5">
   <div class="row">
-    <h4 class="text-center font-weight-bold">
+    <h4 class="text-center text-muted font-weight-bold">
       Bola Mamona Borracha Maciça Furacão Pet Rosa
     </h4>
   </div>
 </div>
 
 <div class="container">
-  <div class="row mt-5">
-    <div class="col-md-4 col-12 mx-auto d-flex justify-content-center">
+  <div class="row mt-2">
+    <div
+      class="col-md-8 col-12 mx-auto d-flex justify-content-center border w-100 shadow"
+    >
       <img
-        class="card-img-top w-75 mx-auto"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQWG25y1NExwEppBl22NcaDqM5qOBCxXuRewx580ssA--Sr_PFeM0cemaSkhPZsV7hwjhalFZfDBsM&usqp=CAc"
+        class="w-50 mx-auto"
+        src="/assets/bola.png"
         alt="Imagem do produto"
       />
     </div>
 
-    <div class="col-md-4 col-12 text-center">
-      <hr />
-
-      <h3>Preço: R$ 10,90 à vista</h3>
-    </div>
-
-    <div class="col-md-4 col-12">
-      <div class="card w-100" style="width: 19rem">
-        <p class="card-text w-100 p-2">
-          Bola Mamona Borracha Maciça Furacão Pet Rosa
-        </p>
+    <div class="col-md-4 col-12 pl-md-2 px-0">
+      <div class="bg-light shadow w-100 p-5">
+        <h3>Preço: <span class="text-success">R$ 10,90</span> à vista</h3>
+        <p class="">Bola Mamona Borracha Maciça Furacão Pet Rosa</p>
       </div>
-
       <div class="input-group mb-3 mt-4">
         <div class="input-group-prepend">
           <label class="input-group-text" for="inputGroupSelect01"
@@ -54,27 +48,55 @@
       </div>
 
       <div class="p-2">
-        <a class="btn btn-primary w-100" routerLink="/carrinho" role="button"
-          >Comprar</a
+        <a
+          class="btn btn-lg btn-green w-100"
+          routerLink="/carrinho"
+          role="button"
+        >
+          <i class="fas fa-shopping-cart mr-2"></i>
+          Comprar</a
         >
       </div>
       <div class="p-2">
-        <a class="btn btn-primary w-100" routerLink="/carrinho" role="button"
-          >Doar</a
+        <a
+          class="btn btn-lg btn-blue w-100"
+          routerLink="/carrinho"
+          role="button"
+          ><i class="fas fa-heart mr-2"></i>Doar</a
         >
       </div>
     </div>
   </div>
 </div>
 
-<div class="container w-100 mt-5">
-  <div class="col-md-12 col-12">
+<div class="container mt-5 mb-5 px-0">
+  <div class="card shadow w-100 p-5" style="width: 19rem">
     <h3>Descrição</h3>
-    <div class="card w-100" style="width: 19rem">
-      <p class="card-text w-100 p-2">
-        Indicado para cães, borracha macia e resistente, com pontos e formato de
-        uma mamona, brinquedo ideal para estimular as habilidades mentais.
-      </p>
+    <p class="card-text lead w-100">
+      Indicado para cães, borracha macia e resistente, com pontos e formato de
+      uma mamona, brinquedo ideal para estimular as habilidades mentais.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque
+      repudiandae consectetur voluptas. Molestias quia labore assumenda
+      doloribus nemo quidem autem, eum quibusdam a possimus distinctio, debitis
+      dolor architecto ab, neque in veniam. Saepe dolores maiores harum earum
+      animi? Consequatur velit nam vero atque doloribus cupiditate laboriosam
+      incidunt molestiae tenetur adipisci! Magnam fugit eveniet earum soluta,
+      nulla maxime cumque provident eligendi ex blanditiis possimus ipsa, autem,
+      alias eaque non culpa quam. Repellat alias quia iusto eos itaque illum.
+      Odio, neque vel.
+    </p>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-12">
+      <h3>Alguns produtos que podem te interessar...</h3>
     </div>
+    <app-card-item></app-card-item>
+    <app-card-item></app-card-item>
+    <app-card-item></app-card-item>
   </div>
 </div>

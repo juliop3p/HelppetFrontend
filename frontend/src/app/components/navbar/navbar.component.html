@@ -1,25 +1,63 @@
 <!--Inicio Nav Bar-->
-<div class="container-fluid p-0">
-  <nav class="navbar navbar-expand-l bg-green">
-    <!--Logotipo -->
-    <a href="#" class="navbar-left"><img src="assets/logo.png" /></a>
-    <!--Logotipo -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-green">
+  <div class="container">
+    <a routerLink="/home" class="navbar-left"
+      ><img style="width: 12rem" src="assets/logo2.png"
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <!--Button pesquisar-->
-    <form action="" method="post">
-      <input type="search" name="" id="" />
-      <img
-        src="https://img.icons8.com/fluent-systems-regular/24/000000/search.png"
-      />
-    </form>
-    <!--Fim button pesquisar-->
-  </nav>
-  <nav class="navbar navbar-expand-lg navbar-light bg-green-dark">
+    <div
+      class="collapse navbar-collapse d-md-flex justify-content-between"
+      id="navbarSupportedContent"
+    >
+      <form class="form-inline input-search pt-sm-3 pt-md-0">
+        <div class="input-icon">
+          <input type="search" placeholder="Pesquise os produtos" />
+          <button class="btn" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </form>
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="text-white d-flex" routerLink="/login">
+            <fa-icon [icon]="faUser" class="faUser fa-2x p-3"></fa-icon>
+            <div>
+              <p class="lead mb-0 mt-3">Bem-vindo</p>
+              <small>Entre ou cadastre-se</small>
+            </div>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="text-white d-flex" routerLink="/carrinho">
+            <fa-icon [icon]="faCartPlus" class="faCartPlus fa-2x p-3"></fa-icon>
+            <div>
+              <p class="lead mb-0 mt-3">Carrinho</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Fim Navbar -->
+<nav class="navbar navbar-expand-lg bg-green-dark">
+  <div class="container">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav w-100 d-flex justify-content-between">
         <li class="nav-item dropdown">
           <a
-            class="nav-link dropdown-toggle"
+            class="nav-link dropdown-toggle text-white"
             href="#"
             id="navbarDropdown"
             role="button"
@@ -27,6 +65,7 @@
             aria-haspopup="true"
             aria-expanded="false"
           >
+            <fa-icon [icon]="faBars" class="faCartPlus fa-1x p-3"></fa-icon>
             Menu
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -35,15 +74,17 @@
             <a class="dropdown-item" href="#">Gatos</a>
           </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#" routerLink="/sobre"
-            >Quem somos</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-light" href="#">Entre em contato</a>
-        </li>
+        <div class="d-flex">
+          <li class="nav-item mr-5">
+            <a class="nav-link text-white" href="#" routerLink="/sobre"
+              >Quem somos</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Entre em contato</a>
+          </li>
+        </div>
       </ul>
     </div>
-  </nav>
-</div>
+  </div>
+</nav>

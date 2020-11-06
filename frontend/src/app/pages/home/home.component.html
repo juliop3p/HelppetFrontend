@@ -3,7 +3,7 @@
   <!--Carousel-->
   <div
     id="carouselExampleIndicators"
-    class="carousel slide"
+    class="carousel slide d-none d-md-block"
     data-ride="carousel"
   >
     <ol class="carousel-indicators">
@@ -20,7 +20,7 @@
         <img
           class="d-block w-100"
           style="height: 280px; width: 700px"
-          src="assets/img-carousel/gato_preto.jpg"
+          src="https://cobasi.vteximg.com.br/arquivos/ids/361197/SUPER-BLACK-NOVEMBER-DESKTOP-03-11.gif?v=637396810744300000"
           alt="Primeiro Slide"
         />
         <!--div class="carousel-caption d-none d-md-block">
@@ -32,7 +32,7 @@
         <img
           class="d-block w-100"
           style="height: 280px; width: 700px"
-          src="assets/img-carousel/cachoroo.jpg"
+          src="https://cobasi.vteximg.com.br/arquivos/ids/361197/SUPER-BLACK-NOVEMBER-DESKTOP-03-11.gif?v=637396810744300000"
           alt="Segundo Slide"
         />
         <!--div class="carousel-caption d-none d-md-block">
@@ -44,7 +44,7 @@
         <img
           class="d-block w-100"
           style="height: 280px; width: 700px"
-          src="assets/img-carousel/gato-siberiano.jpg"
+          src="https://cobasi.vteximg.com.br/arquivos/ids/361197/SUPER-BLACK-NOVEMBER-DESKTOP-03-11.gif?v=637396810744300000"
           alt="Terceiro Slide"
         />
         <!--div class="carousel-caption d-none d-md-block">
@@ -79,56 +79,94 @@
 <!--container-->
 <div class="container w-100">
   <div class="row w-100 mt-5">
-    <div class="col-md-12">
-      <div class="card-deck">
-        <div class="card">
-          <h5 class="card-title text-center">Título do card</h5>
-          <img
-            class="card-img-top"
-            src="assets/img-carousel/gatinho.jpg"
-            alt="Imagem de capa do card"
-          />
-          <div class="card-body"></div>
-        </div>
-        <div class="card">
-          <h5 class="card-title text-center">Título do card</h5>
-          <img
-            class="card-img-top"
-            src="assets/img-carousel/gatinho.jpg"
-            alt="Imagem de capa do card"
-          />
-          <div class="card-body"></div>
-        </div>
-        <div class="card">
-          <h5 class="card-title text-center">Título do card</h5>
-          <img
-            class="card-img-top"
-            src="assets/img-carousel/gatinho.jpg"
-            alt="Imagem de capa do card"
-          />
-          <div class="card-body"></div>
-        </div>
-      </div>
+    <div class="col-12">
+      <h2 class="text-center mb-5">Nossas Promoções</h2>
     </div>
+    <a routerLink="/produto" class="col-4 card-hover">
+      <img
+        src="https://cobasi.vteximg.com.br/arquivos/ids/362416/TAPETE-BLUE-SQUARE-06-11.png?v=637400254671330000"
+        alt="Promoção"
+        class="img-fluid"
+      />
+    </a>
+    <a routerLink="/produto" class="col-4 card-hover">
+      <img
+        src="https://cobasi.vteximg.com.br/arquivos/ids/362416/TAPETE-BLUE-SQUARE-06-11.png?v=637400254671330000"
+        alt="Promoção"
+        class="img-fluid"
+      />
+    </a>
+    <a routerLink="/produto" class="col-4 card-hover">
+      <img
+        src="https://cobasi.vteximg.com.br/arquivos/ids/362416/TAPETE-BLUE-SQUARE-06-11.png?v=637400254671330000"
+        alt="Promoção"
+        class="img-fluid"
+      />
+    </a>
+    <!-- <div class="col-md-12"> -->
+    <!-- <div class="card-deck">
+        <div class="card">
+          <h5 class="card-title text-center">Título do card</h5>
+          <img
+            class="img-fluid"
+            src="assets/img-carousel/gatinho.jpg"
+            alt="Imagem de capa do card"
+          />
+          <div class="card-body"></div>
+        </div>
+        <div class="card">
+          <h5 class="card-title text-center">Título do card</h5>
+          <img
+            class="img-fluid"
+            src="assets/img-carousel/gatinho.jpg"
+            alt="Imagem de capa do card"
+          />
+          <div class="card-body"></div>
+        </div>
+        <div class="card">
+          <h5 class="card-title text-center">Título do card</h5>
+          <img
+            class="img-fluid"
+            src="assets/img-carousel/gatinho.jpg"
+            alt="Imagem de capa do card"
+          />
+          <div class="card-body"></div>
+        </div>
+      </div> -->
+    <!-- </div> -->
   </div>
 </div>
 <!--/container-->
 
 <div class="row w-100 mt-5">
   <div class="col-md-12">
-    <h5 class="text-center">Nossos produtos</h5>
+    <h2 class="text-center">Nossos produtos</h2>
   </div>
 </div>
 
 <!--container-->
 <div class="container w-100">
-  <div class="row w-100 mt-5 d-flex justify-content-center">
+  <div class="row w-100 d-flex justify-content-center">
     <app-card-item></app-card-item>
     <app-card-item></app-card-item>
     <app-card-item></app-card-item>
     <app-card-item></app-card-item>
     <app-card-item></app-card-item>
     <app-card-item></app-card-item>
+  </div>
+  <div class="row my-5 justify-content-center">
+    <nav aria-label="...">
+      <ul class="pagination pagination-lg">
+        <li class="page-item active" aria-current="page">
+          <span class="page-link">
+            1
+            <span class="sr-only">(current)</span>
+          </span>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+      </ul>
+    </nav>
   </div>
 </div>
 <!--/container-->

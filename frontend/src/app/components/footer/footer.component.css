@@ -1,18 +1,20 @@
-ul.social-network {
-  list-style: none;
-  display: inline;
-
-  padding: 0;
+a {
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
 }
 
-ul.social-network li {
-  display: inline;
-  margin: 0;
-  padding: 5px;
+.fb-ic:hover {
+  color: #4064ac !important;
 }
 
-.faFacebook,
-.faLinkedin,
-.faInstagram {
-  color: rgb(4, 28, 59);
+.tw-ic:hover {
+  color: #29a4d9 !important;
+}
+
+.li-ic:hover {
+  color: #0270ad !important;
+}
+
+.ins-ic:hover {
+  color: #e42047 !important;
 }

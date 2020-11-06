@@ -18,6 +18,10 @@ h6 {
   font-family: Roboto, sans-serif;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 .bg-green {
   background-color: var(--color-green);
 }
@@ -32,6 +36,24 @@ h6 {
 
 .bg-blue-dark {
   background-color: var(--color-blue-secondary);
+}
+
+.btn-green {
+  background-color: var(--color-green) !important;
+  color: #fff !important;
+}
+
+.btn-blue {
+  background-color: var(--color-blue) !important;
+  color: #fff !important;
+}
+
+.btn-green:hover {
+  opacity: 0.8;
+}
+
+.btn-blue:hover {
+  opacity: 0.8;
 }
 
 .height-100 {
