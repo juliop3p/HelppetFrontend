@@ -1,1 +1,159 @@
-<p>cadastro works!</p>
+<!-- Colunas sempre com metade da largura disponível, em dispositivos móveis e desktop -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6 d-flex justify-content-center w-100 h-100">
+      <div class="container w-100">
+        <!--primeira linha - título-->
+        <div class="row w-100 mt-5 mb-5">
+          <div class="col-md-12">
+            <h1 class="text-center">Cadastra-se</h1>
+          </div>
+        </div>
+        <!--final-->
+
+        <!--segunda linha - formulário-->
+        <div class="row mb-5 d-flex justify-content-center">
+          <div class="col-md-8">
+            <div class="form">
+              <input
+                type="text"
+                class="form-control"
+                id="nomeUsuario"
+                required
+                [(ngModel)]="user.nomeUsuario"
+              >
+              <label for="nomeUsuario" class="label-name">
+                <span class="content-name">
+                  Nome:
+                </span>
+              </label>
+              
+            </div>
+
+            <div class="form">
+              <input
+                type="text"
+                class="form-control"
+                id="cpfUsuario"
+                required
+                [(ngModel)]="user.cpfUsuario"
+              >
+              <label for="cpfUsuario" class="label-name">
+                <span class="content-name">
+                    CPF:</span></label>
+            </div>
+
+            <div class="form">
+              <input
+                type="text"
+                class="form-control"
+                id="dataNascimentoUsuario"
+                 required
+                [(ngModel)]="user.dataNascimentoUsuario"
+              > 
+              <label for="dataNascimentoUsuario" class="label-name">
+                <span class="content-name">
+                    Data de nascimento:
+                    </span>
+                </label>
+            </div>
+
+            <div class="form">
+              <input
+                type="text"
+                class="form-control"
+                id="enderecoUsuario"
+                 required
+                [(ngModel)]="user.enderecoUsuario"
+              > 
+              <label for="enderecoUsuario" class="label-name">
+                <span class="content-name">  
+                Endereço:
+                </span>
+            </label>
+            </div>
+
+            <div class="form">
+              <input
+                type="text"
+                class="form-control"
+                id="telefoneUsuario"
+                 required
+                [(ngModel)]="user.telefoneUsuario"
+              > 
+              <label for="telefoneUsuario" class="label-name">
+                <span class="content-name">Telefone:
+                    </span>
+                </label>
+            </div>
+
+            <div class="form">
+              <input
+                type="email"
+                class="form-control"
+                id="emailUsuario"
+                 required
+                [(ngModel)]="user.emailUsuario"
+              > 
+              <label for="emailUsuario" class="label-name">
+                <span class="content-name">E-mail:
+                    </span>
+                </label>
+            </div>
+
+            <div class="form">
+              <input
+                type="password"
+                class="form-control"
+                id="senhaUsuario"
+                 required
+                (input)="conferirSenha($event)"
+                value="{{ senha }}"
+              > 
+              <label for="senhaUsuario" class="label-name">
+                <span class="content-name">Senha:</span></label>
+            </div>
+
+            <div class="form">
+              <input
+                type="password"
+                class="form-control"
+                id="senhaConf"
+                required
+                [(ngModel)]="user.senha"
+              >
+              <label for="senhaConf" class="label-name"> 
+                <span class="content-name">
+                Confirmar senha:</span></label>
+            </div>
+
+            <div class="d-flex justify-content-center mt-4">
+              <!--button-->
+              <button
+                class="btn btn-outline-success w-25"
+                type="submit"
+                (click)="cadastrar()"
+              >
+                Cadastrar
+              </button>
+              <!--/button-->
+            </div>
+
+            <div class="mt-3 d-flex justify-content-end">
+              Já possui uma conta?&ensp;<a routerLink='/login'>Faça Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--final-->
+    </div>
+  
+
+  <div class="col-6  bg-green-dark d-flex justify-content-center align-items-center">
+      <!--Logotipo -->
+    <img src="assets/logo.png" />
+    <!--/Logotipo -->
+  </div>
+</div>
+</div>
+

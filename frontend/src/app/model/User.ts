@@ -1,11 +1,12 @@
 export class User {
-  idUsuario: number;
-  nomeUsuario: string;
-  emailUsuario: string;
-  senhaUsuario: string;
-  cpfUsuario: string;
-  telefoneUsuario: string;
-  enderecoUsuario: string;
-  dataNascimentoUsuario: string;
-  admin: boolean;
+ public idUsuario: number;
+ public nomeUsuario: string;
+ public emailUsuario: string;
+ public senhaUsuario: string;
+ public cpfUsuario: string;
+ public telefoneUsuario: string;
+ public enderecoUsuario: string;
+ public dataNascimentoUsuario: string;
+ public admin: boolean;
+  senha: string;
 }
