@@ -7,7 +7,7 @@
 }
 
 .cor-fonte {
-  color: #83878a;
+  color: #797979;
   font-size: 5em;
  }
 
@@ -19,7 +19,13 @@
     font-size: 2em;
  }
 
+.icoGithub{
+   color: #000000;
+}
 
+.icoGithub:hover{
+   color: #363535;
+}
 
 
     
