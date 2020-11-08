@@ -19,12 +19,11 @@
     font-size: 2em;
  }
 
-.icoGithub{
-   color: #000000;
-}
+
+
 
 .icoGithub:hover{
-   color: #363535;
+   color: #000000;
 }
 
 
