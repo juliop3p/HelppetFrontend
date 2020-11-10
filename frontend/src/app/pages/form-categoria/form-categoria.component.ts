@@ -38,7 +38,7 @@ export class FormCategoriaComponent implements OnInit {
   }
 
   cadastrar() {
-    if (this.categoria.animalCategoria == null) {
+    if (this.categoria.animalCategoria == null || this.categoria.subSecaoCategoria == null || this.categoria.secaoCategoria == null) {
       alert('Preencha o campo da categoria corretamente');
     } else {
       this.categoriaService
