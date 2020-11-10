@@ -1,5 +1,11 @@
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { faUser, faCartPlus, faBars } from '@fortawesome/free-solid-svg-icons';
+import {
+  faUser,
+  faCartPlus,
+  faBars,
+  faUserCog,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -10,8 +16,9 @@ export class NavbarComponent implements OnInit {
   faUser = faUser;
   faCartPlus = faCartPlus;
   faBars = faBars;
+  faUserCog = faUserCog;
 
-  constructor() {}
+  constructor(public authService: AuthService) {}
 
   ngOnInit(): void {}
 }

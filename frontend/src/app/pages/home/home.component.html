@@ -172,8 +172,12 @@
 <!--/container-->
 
 <div class="container-fluid p-5">
-<div class="d-flex justify-content-end">
-  <a href="/home">
-  <img style="height: 50px; width: 50px" src="assets/up-arrow.png" alt="Up Arrow"/></a>
-</div>
+  <div class="d-flex justify-content-end">
+    <a (click)="scrollTop()" class="button">
+      <img
+        style="height: 50px; width: 50px"
+        src="assets/up-arrow.png"
+        alt="Up Arrow"
+    /></a>
+  </div>
 </div>

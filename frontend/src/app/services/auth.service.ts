@@ -16,4 +16,37 @@ export class AuthService {
   logar(userLogin: UserLogin) {
     return this.http.post('http://localhost:8080/usuarios/logar', userLogin);
   }
+
+  btnSair() {
+    let ok = false;
+    let token = localStorage.getItem('token');
+
+    if (token !== null) {
+      ok = true;
+    }
+
+    return ok;
+  }
+
+  btnLogin() {
+    let ok = false;
+    let token = localStorage.getItem('token');
+
+    if (token === null) {
+      ok = true;
+    }
+
+    return ok;
+  }
+
+  btnAdmin() {
+    let ok = false;
+    let token = localStorage.getItem('admin');
+
+    if (token === 'true') {
+      ok = true;
+    }
+
+    return ok;
+  }
 }

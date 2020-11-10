@@ -1,3 +1,6 @@
+import { FormProdutoComponent } from './pages/form-produto/form-produto.component';
+import { FormCategoriaComponent } from './pages/form-categoria/form-categoria.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
@@ -36,6 +39,18 @@ const routes: Routes = [
   {
     path: 'cadastro',
     component: CadastroComponent,
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+  },
+  {
+    path: 'form-categoria',
+    component: FormCategoriaComponent,
+  },
+  {
+    path: 'form-produto',
+    component: FormProdutoComponent,
   },
 ];
 
