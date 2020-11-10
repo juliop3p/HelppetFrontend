@@ -1,1 +1,87 @@
-<p>form-produto works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mt-5">
+      <h1 class="text-center">
+        Cadastro de Produtos
+      </h1>
+    </div>
+  </div>
+
+  <form>
+    <div class="form-group mt-5">
+      <div class="form-row">
+        <div class="col pr-3">
+          <label for="categoria">Categoria:</label>
+          <select class="form-control" id="categoria">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+
+        <div class="col">
+          <label for="imagemProduto">Url da imagem:</label>
+          <input
+            type="url"
+            class="form-control"
+            id="imagemProduto"
+            placeholder="Insira a Url da imagem do produto"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col pr-3">
+          <label for="nomeProduto">Nome:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nomeProduto"
+            placeholder="Insira o nome do produto"
+          />
+        </div>
+
+        <div class="col">
+          <label for="marcaProduto">Marca:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="marcaProduto"
+            placeholder="Insira a marca do produto"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="form-row">
+        <div class="col pr-3">
+          <label for="precoProduto">Preço:</label>
+          <input type="text" class="form-control" placeholder="Preço" />
+        </div>
+        <div class="col">
+          <label for="estoqueProduto">Quantidade:</label>
+          <input type="number" class="form-control" placeholder="Quantidade" />
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="descricaoProduto">Descrição do produto:</label>
+      <textarea class="form-control" id="descricaoProduto" rows="3"></textarea>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-center mt-3">
+          <div class="pr-3 w-20">
+        <button type="submit" class="btn btn-outline-success">Cadastrar</button>
+    </div>
+    <div class="w-20">
+        <button type="submit" class="btn btn-outline-danger">Cancelar</button>
+    </div>
+      </div>
+    </div>
+  </form>
+</div>

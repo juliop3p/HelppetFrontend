@@ -1,4 +1,5 @@
-export class User {
+export class Produto {
+  idProduto: number;
   nomeProduto: string;
   precoProduto: number;
   marcaProduto: string;
