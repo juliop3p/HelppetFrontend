@@ -1,5 +1,6 @@
-export class User {
+export class Categoria {
   secaoCategoria: string;
   subSecaoCategoria: string;
   animalCategoria: string;
+  idCategoria: number;
 }

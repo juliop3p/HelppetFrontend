@@ -1,0 +1,17 @@
+.esp{
+    padding-left: 50px;
+}
+
+.form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+} 
+
+.text-center {
+    font-size: 25px;
+    color: #817e7e;
+}
+
+.font-weight-bold{
+    color: #817e7e;
+}
