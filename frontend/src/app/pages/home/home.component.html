@@ -76,108 +76,93 @@
 </div>
 <!--/container-->
 
-<!--container-->
-<div class="container w-100">
-  <div class="row w-100 mt-5">
-    <div class="col-12">
-      <h2 class="text-center mb-5">Nossas Promoções</h2>
+<div class="container-fluid bg-image">
+  <!--container-->
+  <div class="container w-100">
+    <div class="row w-100 mt-5">
+      <div class="col-12">
+        <h2 class="text-center mb-5">Nossas Promoções</h2>
+      </div>
+      <a routerLink="/produto" class="col-4 card-hover">
+        <img
+          src="assets/card-gato-50.png"
+          alt="Promoção"
+          class="img-fluid rounded"
+        />
+      </a>
+      <a routerLink="/produto" class="col-4 card-hover">
+        <img
+          src="https://cobasi.vteximg.com.br/arquivos/ids/362416/TAPETE-BLUE-SQUARE-06-11.png?v=637400254671330000"
+          alt="Promoção"
+          class="img-fluid"
+        />
+      </a>
+      <a routerLink="/produto" class="col-4 card-hover">
+        <img
+          src="https://cobasi.vteximg.com.br/arquivos/ids/362416/TAPETE-BLUE-SQUARE-06-11.png?v=637400254671330000"
+          alt="Promoção"
+          class="img-fluid"
+        />
+      </a>
     </div>
-    <a routerLink="/produto" class="col-4 card-hover">
-      <img
-        src="assets/card-gato-50.png"
-        alt="Promoção"
-        class="img-fluid rounded"
-      />
-    </a>
-    <a routerLink="/produto" class="col-4 card-hover">
-      <img
-        src="https://cobasi.vteximg.com.br/arquivos/ids/362416/TAPETE-BLUE-SQUARE-06-11.png?v=637400254671330000"
-        alt="Promoção"
-        class="img-fluid"
-      />
-    </a>
-    <a routerLink="/produto" class="col-4 card-hover">
-      <img
-        src="https://cobasi.vteximg.com.br/arquivos/ids/362416/TAPETE-BLUE-SQUARE-06-11.png?v=637400254671330000"
-        alt="Promoção"
-        class="img-fluid"
-      />
-    </a>
-    <!-- <div class="col-md-12"> -->
-    <!-- <div class="card-deck">
-        <div class="card">
-          <h5 class="card-title text-center">Título do card</h5>
-          <img
-            class="img-fluid"
-            src="assets/img-carousel/gatinho.jpg"
-            alt="Imagem de capa do card"
-          />
-          <div class="card-body"></div>
-        </div>
-        <div class="card">
-          <h5 class="card-title text-center">Título do card</h5>
-          <img
-            class="img-fluid"
-            src="assets/img-carousel/gatinho.jpg"
-            alt="Imagem de capa do card"
-          />
-          <div class="card-body"></div>
-        </div>
-        <div class="card">
-          <h5 class="card-title text-center">Título do card</h5>
-          <img
-            class="img-fluid"
-            src="assets/img-carousel/gatinho.jpg"
-            alt="Imagem de capa do card"
-          />
-          <div class="card-body"></div>
-        </div>
-      </div> -->
-    <!-- </div> -->
   </div>
-</div>
-<!--/container-->
 
-<div class="row w-100 mt-5">
-  <div class="col-md-12">
-    <h2 class="text-center">Nossos produtos</h2>
+  <div class="row w-100 mt-5">
+    <div class="col-md-12">
+      <h2 class="text-center">Nossos produtos</h2>
+    </div>
   </div>
-</div>
 
-<!--container-->
-<div class="container w-100">
-  <div class="row w-100 d-flex justify-content-center">
-    <app-card-item></app-card-item>
-    <app-card-item></app-card-item>
-    <app-card-item></app-card-item>
-    <app-card-item></app-card-item>
-    <app-card-item></app-card-item>
-    <app-card-item></app-card-item>
-  </div>
-  <div class="row my-5 justify-content-center">
-    <nav aria-label="...">
-      <ul class="pagination pagination-lg">
-        <li class="page-item active" aria-current="page">
-          <span class="page-link">
-            1
-            <span class="sr-only">(current)</span>
-          </span>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-      </ul>
-    </nav>
-  </div>
-</div>
-<!--/container-->
+  <!--container-->
+  <div class="container w-100">
+    <div class="row w-100 justify-content-center">
+      <a
+        routerLink="/produto"
+        *ngFor="let item of listaProduto"
+        class="container"
+      >
+        <div class="card mx-2 my-2">
+          <div class="imgBx">
+            <img src="{{ item.imagemProduto }}" alt="Produto" />
+          </div>
+          <div class="contentBx">
+            <h2>{{ item.nomeProduto }}</h2>
+            <strong class="lead font-weight-bold price"
+              >R$ {{ item.precoProduto }}</strong
+            >
 
-<div class="container-fluid p-5">
-  <div class="d-flex justify-content-end">
-    <a (click)="scrollTop()" class="button">
-      <img
-        style="height: 50px; width: 50px"
-        src="assets/up-arrow.png"
-        alt="Up Arrow"
-    /></a>
+            <a class="lead text-success" routerLink="/produto"
+              >Adicionar ao Carrinho</a
+            >
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="row my-5 justify-content-center">
+      <nav aria-label="...">
+        <ul class="pagination pagination-lg">
+          <li class="page-item active" aria-current="page">
+            <span class="page-link">
+              1
+              <span class="sr-only">(current)</span>
+            </span>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!--/container-->
+
+  <div class="container-fluid p-5">
+    <div class="d-flex justify-content-end">
+      <a (click)="scrollTop()" class="button">
+        <img
+          style="height: 50px; width: 50px"
+          src="assets/up-arrow.png"
+          alt="Up Arrow"
+      /></a>
+    </div>
   </div>
 </div>

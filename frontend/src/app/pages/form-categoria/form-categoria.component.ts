@@ -6,49 +6,48 @@ import { Categoria } from '../../model/Categoria';
 @Component({
   selector: 'app-form-categoria',
   templateUrl: './form-categoria.component.html',
-  styleUrls: ['./form-categoria.component.css']
+  styleUrls: ['./form-categoria.component.css'],
 })
 export class FormCategoriaComponent implements OnInit {
-
-  categoria: Categoria = new Categoria()
-  listaCategoria: Categoria[]
-  modificacao: boolean = false
-
+  categoria: Categoria = new Categoria();
+  listaCategoria: Categoria[];
+  modificacao: boolean = false;
 
   constructor(
     private categoriaService: CategoriaService,
     private router: Router
-    
-  ) { }
+  ) {}
 
   ngOnInit() {
-
-    this.findAllCategoria()
-  
+    this.findAllCategoria();
   }
 
   findAllCategoria() {
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
-      this.listaCategoria = resp
-      console.log(this.listaCategoria)
-    })
+      this.listaCategoria = resp;
+      console.log(this.listaCategoria);
+    });
   }
 
- findByIdCategoria() {
-   this.categoriaService.getByIdCategoria(this.categoria.idCategoria).subscribe((resp: Categoria) => {
-     this.categoria = resp;
-   })
- }
+  findByIdCategoria() {
+    this.categoriaService
+      .getByIdCategoria(this.categoria.idCategoria)
+      .subscribe((resp: Categoria) => {
+        this.categoria = resp;
+      });
+  }
 
- Cadastrar(){
-   if (this.categoria.animalCategoria == null) {
-    alert('Preencha o campo da categoria corretamente')
-   } else {
-    this.categoriaService.postCategoria(this.categoria).subscribe((resp: Categoria) => {
-      this.categoria = resp
-      this.router.navigate(['/dashboard'])
-      alert('Categoria cadastrada com sucesso!')
-    })
-   }
- }
+  cadastrar() {
+    if (this.categoria.animalCategoria == null) {
+      alert('Preencha o campo da categoria corretamente');
+    } else {
+      this.categoriaService
+        .postCategoria(this.categoria)
+        .subscribe((resp: Categoria) => {
+          this.categoria = resp;
+          this.router.navigate(['/dashboard']);
+          alert('Categoria cadastrada com sucesso!');
+        });
+    }
+  }
 }

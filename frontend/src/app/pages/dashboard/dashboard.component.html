@@ -1,139 +1,110 @@
-<h1 class='d-flex justify-content-center mt-5'> Produtos</h1>
+<h1 class="d-flex justify-content-center mt-5">Produtos</h1>
 <div class="container-fluid mt-5 text-center d-none d-lg-block">
-    <div class="row">
-
-        <div class="col-10 mx-auto col-lg-2">
-            <p class="text-uppercase font-weight-bold">Imagem Produto</p>
-        </div>
-        <div class="col-10 mx-auto col-lg-2">
-            <p class="text-uppercase font-weight-bold">Produto / descrição</p>
-        </div>
-        <div class="col-10 mx-auto col-lg-1">
-            <p class="text-uppercase font-weight-bold">Preço R$</p>
-        </div>
-        <div class="col-10 mx-auto col-lg-2">
-            <p class="text-uppercase font-weight-bold">Quantidade</p>
-        </div>
-        <div class="col-10 mx-auto col-lg-1">
-            <p class="text-uppercase font-weight-bold">Remover</p>
-        </div>
-        <div class="col-10 mx-auto col-lg-2">
-            <p class="text-uppercase font-weight-bold">Total</p>
-        </div>
+  <div class="row">
+    <div class="col-10 mx-auto col-lg-2">
+      <p class="text-uppercase font-weight-bold">Imagem Produto</p>
     </div>
+    <div class="col-10 mx-auto col-lg-2">
+      <p class="text-uppercase font-weight-bold">Produto / descrição</p>
+    </div>
+    <div class="col-10 mx-auto col-lg-1">
+      <p class="text-uppercase font-weight-bold">Preço R$</p>
+    </div>
+    <div class="col-10 mx-auto col-lg-2">
+      <p class="text-uppercase font-weight-bold">Quantidade</p>
+    </div>
+    <div class="col-10 mx-auto col-lg-1">
+      <p class="text-uppercase font-weight-bold">Remover</p>
+    </div>
+    <div class="col-10 mx-auto col-lg-2">
+      <p class="text-uppercase font-weight-bold">Total</p>
+    </div>
+  </div>
 </div>
 <!-- Cadastro Itens -->
 <div class="container-fluid">
-    <div class="row my-3 text-capitalize text-center">
-        <div class="col-10 mx-auto col-lg-2">
-            <img src="https://http2.mlstatic.com/D_NQ_NP_841400-MLB42088768502_062020-O.webp"
-                style="display: 5rem; height: 5rem" alt="produto" class="img-fluid rounded-circle card-hover" />
-        </div>
-
-        <div class="col-10 mx-auto col-lg-2">
-            <span class="d-lg-none">Produto: </span>
-            Peixe De Pelúcia 3d Brinquedo Gato 20 Cms
-        </div>
-
-        <div class="col-10 mx-auto col-lg-1">
-            <span class="d-lg-none">Preço: </span>
-            R$15,99
-        </div>
-
-        <div class="col-10 mx-auto col-lg-2">
-            <div class="col-10 mx-auto col-lg-2 my-2 my-lg-0">
-                <div class="d-flex justify-content-center">
-                    <span class="btn btn-outline-dark mx-1">-</span>
-                    <span class="btn btn-outline-dark mx-1">1</span>
-                    <span class="btn btn-outline-dark mx-1">+</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-10 mx-auto col-lg-1">
-            <div class="cart-icon cursor-pointer">
-                <i class="fas fa-trash text-warning"></i>
-            </div>
-        </div>
-
-        <div class="col-10 mx-auto col-lg-2">
-            <strong class="d-lg-none">Total: </strong>
-            <strong>R$15,99</strong>
-        </div>
-        <div class="col-12">
-            <hr>
-        </div>
+  <div
+    *ngFor="let item of listaProduto"
+    class="row my-3 text-capitalize text-center"
+  >
+    <div class="col-10 mx-auto col-lg-2">
+      <img
+        src="{{ item.imagemProduto }}"
+        style="display: 5rem; height: 5rem"
+        alt="produto"
+        class="img-fluid rounded-circle card-hover"
+      />
     </div>
-    <div class="row my-3 text-capitalize text-center">
-        <div class="col-10 mx-auto col-lg-2">
-            <img src="https://http2.mlstatic.com/D_NQ_NP_841400-MLB42088768502_062020-O.webp"
-                style="display: 5rem; height: 5rem" alt="produto" class="img-fluid rounded-circle card-hover" />
-        </div>
 
-        <div class="col-10 mx-auto col-lg-2">
-            <span class="d-lg-none">Produto: </span>
-            Peixe De Pelúcia 3d Brinquedo Gato 20 Cms
-        </div>
-
-        <div class="col-10 mx-auto col-lg-1">
-            <span class="d-lg-none">Preço: </span>
-            R$15,99
-        </div>
-
-        <div class="col-10 mx-auto col-lg-2">
-            <div class="col-10 mx-auto col-lg-2 my-2 my-lg-0">
-                <div class="d-flex justify-content-center">
-                    <span class="btn btn-outline-dark mx-1">-</span>
-                    <span class="btn btn-outline-dark mx-1">1</span>
-                    <span class="btn btn-outline-dark mx-1">+</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-10 mx-auto col-lg-1">
-            <div class="cart-icon cursor-pointer">
-                <i class="fas fa-trash text-warning"></i>
-            </div>
-        </div>
-
-        <div class="col-10 mx-auto col-lg-2">
-            <strong class="d-lg-none">Total: </strong>
-            <strong>R$15,99</strong>
-        </div>
-        <div class="col-12">
-            <hr>
-        </div>
+    <div class="col-10 mx-auto col-lg-2">
+      <span class="d-lg-none">Produto: </span>
+      {{ item.nomeProduto }}
     </div>
-    <div class="row align-items-center justify-content-center">
-        <button type="button" class="btn btn-outline-primary ">Cadastrar novo Produto
-        </button>
+
+    <div class="col-10 mx-auto col-lg-1">
+      <span class="d-lg-none">Preço: </span>
+      R$ {{ item.precoProduto }}
     </div>
-    <hr>
+
+    <div class="col-10 mx-auto col-lg-2">
+      <div class="col-10 mx-auto col-lg-2 my-2 my-lg-0">
+        <div class="d-flex justify-content-center">
+          <span class="btn btn-outline-dark mx-1">-</span>
+          <span class="btn btn-outline-dark mx-1">{{
+            item.estoqueProduto
+          }}</span>
+          <span class="btn btn-outline-dark mx-1">+</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-10 mx-auto col-lg-1">
+      <div class="cart-icon cursor-pointer">
+        <i class="fas fa-trash text-warning"></i>
+      </div>
+    </div>
+
+    <div class="col-10 mx-auto col-lg-2">
+      <strong class="d-lg-none">Total: </strong>
+      <strong>R${{ item.precoProduto }}</strong>
+    </div>
+    <div class="col-12">
+      <hr />
+    </div>
+  </div>
+
+  <div class="row align-items-center justify-content-center">
+    <a routerLink="/form-produto" class="btn btn-outline-primary"
+      >Cadastrar novo Produto
+    </a>
+  </div>
+  <hr />
 </div>
 <!-- Categorias -->
-<h1 class='d-flex justify-content-center p-3'> Tipos de Categorias</h1>
+<h1 class="d-flex justify-content-center p-3">Tipos de Categorias</h1>
 <div class="container">
-    <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Categoria</th>
-            <th scope="col">Sub-Categoria</th>
-            <th scope="col">Animal Categoria</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Brinquedo</td>
-            <td>Bola</td>
-            <td>Cachorro</td>
-          </tr>
-        </tbody>
-      </table>
-      <hr>
-    <div class="row p-5 align-items-center justify-content-center">
-        <button type="button" class="btn btn-outline-primary">Cadastrar nova Categoria
-        </button>
-    </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Sub-Categoria</th>
+        <th scope="col">Animal Categoria</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listaCategoria">
+        <th scope="row">{{ item.idCategoria }}</th>
+        <td>{{ item.secaoCategoria }}</td>
+        <td>{{ item.subSecaoCategoria }}</td>
+        <td>{{ item.animalCategoria }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+  <div class="row p-5 align-items-center justify-content-center">
+    <a routerLink="/form-categoria" class="btn btn-outline-primary"
+      >Cadastrar nova Categoria
+    </a>
+  </div>
 </div>

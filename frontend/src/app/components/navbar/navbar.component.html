@@ -28,40 +28,63 @@
           </button>
         </div>
       </form>
-      <ul class="navbar-nav">
+      <ul class="navbar-nav d-flex align-items-center">
         <div *ngIf="authService.btnLogin()">
-          <li class="nav-item active">
-            <a class="text-white d-flex" routerLink="/login">
-              <fa-icon [icon]="faUser" class="faUser fa-2x p-3"></fa-icon>
-              <div>
-                <p class="lead mb-0 mt-3">Bem-vindo</p>
-                <small>Entre ou cadastre-se</small>
+          <li class="nav-item mx-3">
+            <a
+              class="text-white d-flex align-items-center justify-content-center"
+              routerLink="/login"
+            >
+              <fa-icon [icon]="faUser" class="faUser fa-2x"></fa-icon>
+              <div class="mt-3">
+                <strong class="ml-2">Bem-vindo</strong>
+                <p class="ml-2">Entre ou cadastre-se</p>
               </div>
             </a>
           </li>
         </div>
         <!--  -->
         <div *ngIf="authService.btnAdmin()">
-          <li class="nav-item active">
-            <a class="text-white d-flex" routerLink="/login">
-              <fa-icon [icon]="faUserCog" class="faUserCog fa-2x p-3"></fa-icon>
+          <li class="nav-item mx-3">
+            <a
+              class="text-white d-flex align-items-center justify-content-center"
+              routerLink="/dashboard"
+            >
+              <fa-icon [icon]="faUserCog" class="faUserCog fa-2x"></fa-icon>
+              <div class="mt-3">
+                <strong class="ml-2">Olá, {{ user }}</strong>
+                <p class="ml-2">Dashboard</p>
+              </div>
+            </a>
+          </li>
+        </div>
+        <!--  -->
+        <div *ngIf="authService.btnCart()">
+          <li class="nav-item mx-3">
+            <a
+              class="text-white d-flex align-items-center justify-content-center"
+              routerLink="/carrinho"
+            >
+              <fa-icon [icon]="faCartPlus" class="faCartPlus fa-2x"></fa-icon>
               <div>
-                <p class="lead mb-0 mt-3">Olá, Julio</p>
-                <small>Dashboard</small>
+                <strong class="mb-0 mt-3 ml-2">Carrinho</strong>
               </div>
             </a>
           </li>
         </div>
         <!--  -->
         <div *ngIf="authService.btnSair()">
-          <li class="nav-item">
-            <a class="text-white d-flex" routerLink="/carrinho">
+          <li class="nav-item mx-3">
+            <a
+              class="text-white d-flex align-items-center justify-content-center"
+              (click)="logout()"
+            >
               <fa-icon
-                [icon]="faCartPlus"
-                class="faCartPlus fa-2x p-3"
+                [icon]="faSignOutAlt"
+                class="faSignOutAlt fa-2x"
               ></fa-icon>
               <div>
-                <p class="lead mb-0 mt-3">Carrinho</p>
+                <strong class="mb-0 mt-3 ml-2">Sair</strong>
               </div>
             </a>
           </li>

@@ -1,63 +1,57 @@
-.form{
-    width: 100%;
-    position: relative;
-    height: 75px;
-    overflow: hidden;
+.form {
+  width: 100%;
+  position: relative;
+  height: 75px;
+  overflow: hidden;
 }
 
 .form input {
-    width: 100%;
-    height:100%;
-    color: #595f6e;
-    padding-top: 55px;
-    border: none;
-    outline: none;
+  width: 100%;
+  height: 100%;
+  color: #595f6e;
+  padding-top: 55px;
+  padding-bottom: 18px;
+  border: none;
+  outline: none;
 }
 
-.form label{
-    position: absolute;
-    top: 2px;
-    bottom: 0px;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    border-bottom: 1px solid black;
-
+.form label {
+  position: absolute;
+  bottom: 0px;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #eee;
 }
 
-.form label::after{
-    content: "";
-    position: absolute;
-    left: 0px;
-    bottom: -1px;
-    height: 100%;
-    width: 100%;
-    border-bottom: 3px solid green;
-    transform: translateX(-100%);
-    padding: 10px;
-    transition: 1s ease;
-    
+.form label::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: -1px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid var(--color-green);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
 }
 
-.content-name{
-    position: absolute;
-    bottom: 5px;
-    left: 0px;
-    transition: all 0.3s ease;
-
+.content-name {
+  position: absolute;
+  bottom: 5px;
+  left: 0px;
+  transition: all 0.3s ease;
 }
 
 .form input:focus + .label-name .content-name,
-.form input:valid + .label-name .content-name
-{
-    transform: translateY(-150%);
-    font-size: 16px;
-    color: green;
+.form input:valid + .label-name .content-name {
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: var(--color-green);
 }
 
-.form input:focus  + .label-name::after,
-.form input:valid + .label-name::after 
-{
-    transform: translateX(0%);
+.form input:focus + .label-name::after,
+.form input:valid + .label-name::after {
+  transform: translateX(0%);
 }

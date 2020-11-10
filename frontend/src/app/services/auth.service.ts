@@ -41,9 +41,22 @@ export class AuthService {
 
   btnAdmin() {
     let ok = false;
-    let token = localStorage.getItem('admin');
+    let token = localStorage.getItem('token');
+    let admin = localStorage.getItem('admin');
 
-    if (token === 'true') {
+    if (token !== null && admin === 'true') {
+      ok = true;
+    }
+
+    return ok;
+  }
+
+  btnCart() {
+    let ok = false;
+    let token = localStorage.getItem('token');
+    let admin = localStorage.getItem('admin');
+
+    if (token !== null && admin !== 'true') {
       ok = true;
     }
 

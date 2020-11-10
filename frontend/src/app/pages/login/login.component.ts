@@ -18,9 +18,15 @@ export class LoginComponent implements OnInit {
   entrar() {
     this.authService.logar(this.userLogin).subscribe((resp: UserLogin) => {
       this.userLogin = resp;
+      localStorage.setItem('user', this.userLogin.nome.split(' ')[0]);
       localStorage.setItem('token', this.userLogin.token);
       localStorage.setItem('admin', String(this.userLogin.admin));
-      this.router.navigate(['/carrinho']);
+
+      if (this.userLogin.admin) {
+        this.router.navigate(['/dashboard']);
+      } else {
+        this.router.navigate(['/carrinho']);
+      }
     });
   }
 }
