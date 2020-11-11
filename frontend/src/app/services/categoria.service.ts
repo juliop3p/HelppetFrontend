@@ -23,6 +23,20 @@ export class CategoriaService {
     return this.http.get(`http://localhost:8080/categorias/${id}`, this.token);
   }
 
+  getBySecao(secao: string) {
+    return this.http.get(
+      `http://localhost:8080/categorias/secaocategoria/${secao}`,
+      this.token
+    );
+  }
+
+  getBySubSecao(secao: string) {
+    return this.http.get(
+      `http://localhost:8080/categorias/subsecaocategoria/${secao}`,
+      this.token
+    );
+  }
+
   postCategoria(categoria: Categoria) {
     return this.http.post(
       'http://localhost:8080/categorias',

@@ -1,87 +1,164 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 mt-5">
-      <h1 class="text-center">
-        Cadastro de Produtos
-      </h1>
-    </div>
-  </div>
-
-  <form>
-    <div class="form-group mt-5">
-      <div class="form-row">
-        <div class="col pr-3">
-          <label for="categoria">Categoria:</label>
-          <select class="form-control" id="categoria">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-          </select>
-        </div>
-
-        <div class="col">
-          <label for="imagemProduto">Url da imagem:</label>
-          <input
-            type="url"
-            class="form-control"
-            id="imagemProduto"
-            placeholder="Insira a Url da imagem do produto"
-          />
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div class="form-row">
-        <div class="col pr-3">
-          <label for="nomeProduto">Nome:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="nomeProduto"
-            placeholder="Insira o nome do produto"
-          />
-        </div>
-
-        <div class="col">
-          <label for="marcaProduto">Marca:</label>
-          <input
-            type="text"
-            class="form-control"
-            id="marcaProduto"
-            placeholder="Insira a marca do produto"
-          />
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <div class="form-row">
-        <div class="col pr-3">
-          <label for="precoProduto">Preço:</label>
-          <input type="text" class="form-control" placeholder="Preço" />
-        </div>
-        <div class="col">
-          <label for="estoqueProduto">Quantidade:</label>
-          <input type="number" class="form-control" placeholder="Quantidade" />
-        </div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="descricaoProduto">Descrição do produto:</label>
-      <textarea class="form-control" id="descricaoProduto" rows="3"></textarea>
-    </div>
-
+<div class="container mx-auto p-4 m-5 shadow">
+  <div class="container">
     <div class="row">
-      <div class="col-md-12 d-flex justify-content-center mt-3">
-          <div class="pr-3 w-20">
-        <button type="submit" class="btn btn-outline-success">Cadastrar</button>
-    </div>
-    <div class="w-20">
-        <button type="submit" class="btn btn-outline-danger">Cancelar</button>
-    </div>
+      <div class="col-md-12 mt-5">
+        <h1 class="text-center">Cadastro de Produtos</h1>
       </div>
     </div>
-  </form>
+
+    <form>
+      <div class="form-group mt-5">
+        <div class="form-row">
+          <div class="col pr-3">
+            <label for="categoria">Categoria:</label>
+            <select
+              name="categoria"
+              class="form-control"
+              id="categoria"
+              [(ngModel)]="secao"
+              (change)="findAllByCategoria()"
+            >
+              <option>Selecione uma categoria</option>
+              <option *ngFor="let item of listaSecao" value="{{ item }}">
+                {{ item }}
+              </option>
+            </select>
+          </div>
+
+          <div class="col">
+            <label for="imagemProduto">Url da imagem:</label>
+            <input
+              type="url"
+              class="form-control"
+              id="imagemProduto"
+              placeholder="Insira a Url da imagem do produto"
+              [(ngModel)]="produto.imagemProduto"
+              name="imagemProduto"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mt-5">
+        <div class="form-row">
+          <div class="col pr-3">
+            <label for="subcategoria">Sub Categoria:</label>
+            <select
+              name="subcategoria"
+              class="form-control"
+              id="subcategoria"
+              [(ngModel)]="subSecao"
+              (change)="findAllBySubCategoria()"
+            >
+              <option>Selecione uma sub categoria</option>
+              <option *ngFor="let item of listaSubSecao" value="{{ item }}">
+                {{ item }}
+              </option>
+            </select>
+          </div>
+
+          <div class="col pr-3">
+            <label for="categoria">Categoria Animal:</label>
+            <select
+              name="animal"
+              class="form-control"
+              id="animal"
+              [(ngModel)]="idSecao"
+            >
+              <option>Selecione a categoria do animal</option>
+              <option
+                *ngFor="let item of listaSecaoAnimal"
+                value="{{ item.idCategoria }}"
+              >
+                {{ item.animalCategoria }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col pr-3">
+            <label for="nomeProduto">Nome:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nomeProduto"
+              placeholder="Insira o nome do produto"
+              [(ngModel)]="produto.nomeProduto"
+              name="nomeProduto"
+            />
+          </div>
+
+          <div class="col">
+            <label for="marcaProduto">Marca:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="marcaProduto"
+              placeholder="Insira a marca do produto"
+              [(ngModel)]="produto.marcaProduto"
+              name="marcaProduto"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col pr-3">
+            <label for="precoProduto">Preço:</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Preço"
+              [(ngModel)]="produto.precoProduto"
+              name="precoProduto"
+            />
+          </div>
+          <div class="col">
+            <label for="estoqueProduto">Quantidade:</label>
+            <input
+              name="estoqueProduto"
+              type="number"
+              class="form-control"
+              placeholder="Quantidade"
+              [(ngModel)]="produto.estoqueProduto"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="descricaoProduto">Descrição do produto:</label>
+        <textarea
+          name="descricaoProduto"
+          class="form-control"
+          id="descricaoProduto"
+          [(ngModel)]="produto.descricaoProduto"
+          rows="3"
+        ></textarea>
+      </div>
+
+      <div class="row mb-5">
+        <div class="col-md-12 d-flex justify-content-center mt-3">
+          <div class="pr-3 w-20">
+            <button
+              (click)="cadastrar()"
+              type="submit"
+              class="btn btn-outline-success"
+            >
+              Cadastrar
+            </button>
+          </div>
+          <div class="w-20">
+            <a routerLink="/dashboard" class="btn btn-outline-danger"
+              >Cancelar</a
+            >
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
