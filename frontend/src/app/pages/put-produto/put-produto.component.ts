@@ -1,7 +1,7 @@
 import { Categoria } from './../../model/Categoria';
 import { CategoriaService } from './../../services/categoria.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Produto } from '../../model/Produto';
 import { ProdutoService } from '../../services/produto.service';
 
@@ -11,6 +11,7 @@ import { ProdutoService } from '../../services/produto.service';
   styleUrls: ['./put-produto.component.css'],
 })
 export class PutProdutoComponent implements OnInit {
+  idProduto: number;
   idSecao: number;
   secao: string;
   subSecao: string;
@@ -25,7 +26,8 @@ export class PutProdutoComponent implements OnInit {
   constructor(
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   findAllCategoria() {
@@ -54,6 +56,16 @@ export class PutProdutoComponent implements OnInit {
 
   ngOnInit() {
     this.findAllCategoria();
+
+    this.idProduto = this.route.snapshot.params['id'];
+    this.findByIdCategoria(this.idProduto);
+  }
+
+  findByIdCategoria(id: number) {
+    this.produtoService.getByIdProduto(id).subscribe((resp: Produto) => {
+      this.produto = resp;
+      console.log(resp);
+    });
   }
 
   salvar() {
@@ -79,5 +91,4 @@ export class PutProdutoComponent implements OnInit {
         });
     }
   }
-
 }

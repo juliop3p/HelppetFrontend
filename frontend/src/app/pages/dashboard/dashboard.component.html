@@ -106,7 +106,7 @@
     </div>
 
     <div class="col-10 mx-auto col-lg-2">
-      <a [routerLink]="['/put-categoria', item.idProduto]">
+      <a [routerLink]="['/put-produto', item.idProduto]">
         <i class="fas fa-edit text-warning cursor-pointer"></i>
       </a>
     </div>
@@ -153,6 +153,7 @@
               <button
                 type="button"
                 class="btn btn-primary"
+                data-dismiss="modal"
                 (click)="btnSimProduto(item.idProduto)"
               >
                 Sim
@@ -203,31 +204,33 @@
         </td>
         <td>
           <!-- Button trigger modal -->
-          <a
+          <div
             type="button"
             class="cursor-pointer"
             data-toggle="modal"
             data-target="#exampleModal"
           >
             <i class="fas fa-trash text-danger cursor-pointer"></i>
-          </a>
+          </div>
 
           <!-- Modal -->
           <div
             class="modal fade"
-            id="exampleModalCategoria"
+            id="exampleModal"
             tabindex="-1"
-            role="dialog"
-            aria-labelledby="exampleModalLabelCategoria"
+            aria-labelledby="exampleModalLabel"
             aria-hidden="true"
           >
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabelCategoria">
-                    Exluir
-                  </h5>
-                  <button class="close" data-dismiss="modal" aria-label="Close">
+                  <h5 class="modal-title" id="exampleModalLabel">Exluir</h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
@@ -245,9 +248,10 @@
                   <button
                     type="button"
                     class="btn btn-primary"
+                    data-dismiss="modal"
                     (click)="btnSimCategoria(item.idCategoria)"
                   >
-                    Sim
+                    Save changes
                   </button>
                 </div>
               </div>

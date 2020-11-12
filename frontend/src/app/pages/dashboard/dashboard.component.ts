@@ -45,6 +45,7 @@ export class DashboardComponent implements OnInit {
   }
 
   btnSimCategoria(id: number) {
+    console.log('Aqui ', id);
     this.categoriaService.deleteCategoria(id).subscribe(() => {
       this.findAllCategoria();
     });
