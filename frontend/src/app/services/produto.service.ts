@@ -28,14 +28,18 @@ export class ProdutoService {
   }
 
   postProduto(produto: Produto) {
-    return this.http.post(
-      'http://localhost:8080/produtos',
-      produto,
-      this.token
-    );
+    return this.http.post('http://localhost:8080/produtos', produto,this.token);
   }
+<<<<<<< HEAD
+ 
+  putProduto(produto: Produto){
+    return this.http.put(`http://localhost:8080/produto/${produto.idProduto}`,produto);
+  }
+
+=======
 
   deleteProduto(id: number) {
     return this.http.delete(`http://localhost:8080/produtos/${id}`, this.token);
   }
+>>>>>>> c460b09257544cdd2bafdfe5f7cb3ef1471d9591
 }
