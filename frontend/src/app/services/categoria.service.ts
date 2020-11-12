@@ -42,4 +42,10 @@ export class CategoriaService {
       this.token
     );
   }
+
+  deleteCategoria(id: number){
+    return this.http.delete(
+      `http://localhost:8080/categorias/${id}`, this.token
+    )
+  }
 }
