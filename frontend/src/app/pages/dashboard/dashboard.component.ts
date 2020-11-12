@@ -13,9 +13,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
   listaCategoria: Categoria[];
   listaProduto: Produto[];
-  produto: Produto = new Produto;
-  categoria: Categoria = new Categoria;
-  
+  produto: Produto = new Produto();
+  categoria: Categoria = new Categoria();
+
   findAllCategoria() {
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
       this.listaCategoria = resp;
@@ -30,8 +30,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private categoriaService: CategoriaService,
-    private produtoService: ProdutoService,
-  
+    private produtoService: ProdutoService
   ) {}
 
   ngOnInit() {
@@ -39,20 +38,15 @@ export class DashboardComponent implements OnInit {
     this.findAllProduto();
   }
 
-  btnSimProduto(id: number){
-    this.produtoService.deleteProduto(id).subscribe(()=>{
-      
+  btnSimProduto(id: number) {
+    this.produtoService.deleteProduto(id).subscribe(() => {
+      this.findAllProduto();
+    });
+  }
 
-      this.findAllProduto()
-    })
-
-}
-
-btnSimCategoria(id: number){
-  this.categoriaService.deleteCategoria(id).subscribe(()=>{
-    this.findAllCategoria()
-  })
-
-}
-
+  btnSimCategoria(id: number) {
+    this.categoriaService.deleteCategoria(id).subscribe(() => {
+      this.findAllCategoria();
+    });
+  }
 }
