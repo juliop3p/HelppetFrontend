@@ -91,7 +91,9 @@
             </div>
 
             <div class="col-10 mx-auto col-lg-2">
-              <i class="fas fa-edit text-warning cursor-pointer"></i>
+              <a [routerLink]="['/put-categoria', item.idProduto]">
+                <i class="fas fa-edit text-warning cursor-pointer"></i>
+              </a>
             </div>
 
             <div class="col-10 mx-auto col-lg-1">
@@ -140,7 +142,11 @@
                 <td>{{ item.secaoCategoria }}</td>
                 <td>{{ item.subSecaoCategoria }}</td>
                 <td>{{ item.animalCategoria }}</td>
-                <td><i class="fas fa-edit text-warning cursor-pointer"></i></td>
+                <td>
+                  <a [routerLink]="['/put-categoria', item.idCategoria]"
+                    ><i class="fas fa-edit text-warning cursor-pointer"></i
+                  ></a>
+                </td>
                 <td><i class="fas fa-trash text-danger cursor-pointer"></i></td>
               </tr>
             </tbody>

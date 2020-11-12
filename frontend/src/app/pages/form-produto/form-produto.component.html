@@ -18,7 +18,7 @@
               [(ngModel)]="secao"
               (change)="findAllByCategoria()"
             >
-              <option>Selecione uma categoria</option>
+              <option selected>Selecione uma categoria</option>
               <option *ngFor="let item of listaSecao" value="{{ item }}">
                 {{ item }}
               </option>
@@ -50,7 +50,7 @@
               [(ngModel)]="subSecao"
               (change)="findAllBySubCategoria()"
             >
-              <option>Selecione uma sub categoria</option>
+              <option selected>Selecione uma sub categoria</option>
               <option *ngFor="let item of listaSubSecao" value="{{ item }}">
                 {{ item }}
               </option>

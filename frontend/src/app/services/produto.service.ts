@@ -16,18 +16,15 @@ export class ProdutoService {
   };
 
   getAllProduto() {
-    return this.http.get('http://localhost:8080/produtos', this.token);
+    return this.http.get('http://localhost:8080/produtos');
   }
 
   getByIdProduto(id: number) {
-    return this.http.get(`http://localhost:8080/produtos/${id}`, this.token);
+    return this.http.get(`http://localhost:8080/produtos/${id}`);
   }
 
   getByNomeProduto(nome: string) {
-    return this.http.get(
-      `http://localhost:8080/produtos/produtos${nome}`,
-      this.token
-    );
+    return this.http.get(`http://localhost:8080/produtos/produtos/${nome}`);
   }
 
   postProduto(produto: Produto) {

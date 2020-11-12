@@ -1,3 +1,4 @@
+import { PutProdutoComponent } from './pages/put-produto/put-produto.component';
 import { FormProdutoComponent } from './pages/form-produto/form-produto.component';
 import { FormCategoriaComponent } from './pages/form-categoria/form-categoria.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -9,6 +10,7 @@ import { SobreComponent } from './pages/sobre/sobre.component';
 import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
 import { ProdutoComponent } from './pages/produto/produto.component';
 import { HomeComponent } from './pages/home/home.component';
+import { PutCategoriaComponent } from './pages/put-categoria/put-categoria.component';
 
 const routes: Routes = [
   {
@@ -51,6 +53,14 @@ const routes: Routes = [
   {
     path: 'form-produto',
     component: FormProdutoComponent,
+  },
+  {
+    path: 'put-produto/:id',
+    component: PutProdutoComponent,
+  },
+  {
+    path: 'put-categoria/:id',
+    component: PutCategoriaComponent,
   },
 ];
 

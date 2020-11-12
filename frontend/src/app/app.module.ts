@@ -19,6 +19,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { FormCategoriaComponent } from './pages/form-categoria/form-categoria.component';
 import { FormProdutoComponent } from './pages/form-produto/form-produto.component';
+import { PutCategoriaComponent } from './pages/put-categoria/put-categoria.component';
+import { PutProdutoComponent } from './pages/put-produto/put-produto.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { FormProdutoComponent } from './pages/form-produto/form-produto.componen
     DashboardComponent,
     FormCategoriaComponent,
     FormProdutoComponent,
+    PutCategoriaComponent,
+    PutProdutoComponent,
   ],
   imports: [
     BrowserModule,

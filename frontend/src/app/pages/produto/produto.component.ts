@@ -25,7 +25,7 @@ export class ProdutoComponent implements OnInit {
     private produtoService: ProdutoService
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     window.scroll(0, 0);
 
     this.idProduto = this.route.snapshot.params['id'];
