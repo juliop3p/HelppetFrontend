@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <div class="row">
     <h4 class="text-center text-muted font-weight-bold">
-      Bola Mamona Borracha Maciça Furacão Pet Rosa
+      {{ produto.nomeProduto }}
     </h4>
   </div>
 </div>
@@ -12,16 +12,27 @@
       class="col-md-8 col-12 mx-auto d-flex justify-content-center border w-100 shadow"
     >
       <img
-        class="w-50 mx-auto"
-        src="/assets/bola.png"
+        class="img-fluid"
+        src="{{ produto.imagemProduto }}"
         alt="Imagem do produto"
       />
     </div>
 
     <div class="col-md-4 col-12 pl-md-2 px-0">
       <div class="bg-light shadow w-100 p-5">
-        <h3>Preço: <span class="text-success">R$ 10,90</span> à vista</h3>
-        <p class="">Bola Mamona Borracha Maciça Furacão Pet Rosa</p>
+        <h3>
+          Preço:
+          <span class="text-success">
+            {{
+              produto.precoProduto.toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL"
+              })
+            }}</span
+          >
+          à vista
+        </h3>
+        <p class="">{{ produto.nomeProduto }}</p>
       </div>
       <div class="input-group mb-3 mt-4">
         <div class="input-group-prepend">
@@ -33,7 +44,7 @@
           class="custom-select justify-content-center"
           id="inputGroupSelect01"
         >
-          <option selected value="1">1</option>
+          <option selected value="1">{{ produto.estoqueProduto }}</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
@@ -72,20 +83,10 @@
 <div class="container mt-5 mb-5 px-0">
   <div class="card shadow w-100 p-5" style="width: 19rem">
     <h3>Descrição</h3>
+    <hr />
+    <strong class="mb-3">{{ produto.nomeProduto }}</strong>
     <p class="card-text lead w-100">
-      Indicado para cães, borracha macia e resistente, com pontos e formato de
-      uma mamona, brinquedo ideal para estimular as habilidades mentais.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque
-      repudiandae consectetur voluptas. Molestias quia labore assumenda
-      doloribus nemo quidem autem, eum quibusdam a possimus distinctio, debitis
-      dolor architecto ab, neque in veniam. Saepe dolores maiores harum earum
-      animi? Consequatur velit nam vero atque doloribus cupiditate laboriosam
-      incidunt molestiae tenetur adipisci! Magnam fugit eveniet earum soluta,
-      nulla maxime cumque provident eligendi ex blanditiis possimus ipsa, autem,
-      alias eaque non culpa quam. Repellat alias quia iusto eos itaque illum.
-      Odio, neque vel.
+      {{ produto.descricaoProduto }}
     </p>
   </div>
 </div>

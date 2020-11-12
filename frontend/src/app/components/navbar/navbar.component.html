@@ -112,9 +112,15 @@
             Menu
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Cadeiras e próteses</a>
-            <a class="dropdown-item" href="#">Cachorros</a>
-            <a class="dropdown-item" href="#">Gatos</a>
+            <!-- <a class="dropdown-item" href="#">Cadeiras e próteses</a> -->
+            <!-- <a class="dropdown-item" href="#">Cachorros</a> -->
+            <!-- <a class="dropdown-item" href="#">Gatos</a> -->
+            <a
+              *ngFor="let item of listaCategoria"
+              class="dropdown-item"
+              href="#"
+              >{{ item }}</a
+            >
           </div>
         </li>
         <div class="d-flex">

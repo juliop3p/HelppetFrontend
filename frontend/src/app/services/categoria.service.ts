@@ -16,11 +16,23 @@ export class CategoriaService {
   };
 
   getAllCategoria() {
-    return this.http.get('http://localhost:8080/categorias', this.token);
+    return this.http.get('http://localhost:8080/categorias');
   }
 
   getByIdCategoria(id: number) {
-    return this.http.get(`http://localhost:8080/categorias/${id}`, this.token);
+    return this.http.get(`http://localhost:8080/categorias/${id}`);
+  }
+
+  getBySecao(secao: string) {
+    return this.http.get(
+      `http://localhost:8080/categorias/secaocategoria/${secao}`
+    );
+  }
+
+  getBySubSecao(secao: string) {
+    return this.http.get(
+      `http://localhost:8080/categorias/subsecaocategoria/${secao}`
+    );
   }
 
   postCategoria(categoria: Categoria) {

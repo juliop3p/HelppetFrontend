@@ -13,12 +13,13 @@ export class HomeComponent implements OnInit {
   findAllProduto() {
     this.produtoService.getAllProduto().subscribe((resp: Produto[]) => {
       this.listaProduto = resp;
+      // console.log(resp);
     });
   }
 
   constructor(private produtoService: ProdutoService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     window.scroll(0, 0);
     this.findAllProduto();
   }
