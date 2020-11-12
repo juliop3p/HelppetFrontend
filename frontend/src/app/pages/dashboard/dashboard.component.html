@@ -2,37 +2,16 @@
   <div class="row">
     <ul class="nav mx-5 nav-tabs w-100" id="myTab" role="tablist">
       <li class="nav-item" role="presentation">
-        <a
-          class="nav-link active"
-          id="home-tab"
-          data-toggle="tab"
-          href="#home"
-          role="tab"
-          aria-controls="home"
-          aria-selected="true"
-          >Produtos</a
-        >
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+          aria-selected="true">Produtos</a>
       </li>
       <li class="nav-item" role="presentation">
-        <a
-          class="nav-link"
-          id="profile-tab"
-          data-toggle="tab"
-          href="#profile"
-          role="tab"
-          aria-controls="profile"
-          aria-selected="false"
-          >Categorias</a
-        >
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+          aria-selected="false">Categorias</a>
       </li>
     </ul>
     <div class="tab-content container-fluid" id="myTabContent">
-      <div
-        class="tab-pane fade show active"
-        id="home"
-        role="tabpanel"
-        aria-labelledby="home-tab"
-      >
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
         <!-- produtos -->
         <h1 class="d-flex justify-content-center mt-5">Produtos</h1>
         <div class="container-fluid mt-5 text-center d-none d-lg-block">
@@ -59,17 +38,10 @@
         </div>
         <!-- Cadastro Itens -->
         <div class="container-fluid">
-          <div
-            *ngFor="let item of listaProduto"
-            class="row my-3 text-capitalize text-center"
-          >
+          <div *ngFor="let item of listaProduto" class="row my-3 text-capitalize text-center">
             <div class="col-10 mx-auto col-lg-2">
-              <img
-                src="{{ item.imagemProduto }}"
-                style="display: 5rem; height: 5rem"
-                alt="produto"
-                class="img-fluid rounded-circle card-hover"
-              />
+              <img src="{{ item.imagemProduto }}" style="display: 5rem; height: 5rem" alt="produto"
+                class="img-fluid rounded-circle card-hover" />
             </div>
 
             <div class="col-10 mx-auto col-lg-2">
@@ -97,7 +69,36 @@
             </div>
 
             <div class="col-10 mx-auto col-lg-1">
-              <i class="fas fa-trash text-danger cursor-pointer"></i>
+              <!-- Button trigger modal -->
+              <a type="button" class="cursor-pointer" data-toggle="modal" data-target="#exampleModal">
+                <i class="fas fa-trash text-danger cursor-pointer"></i>
+              </a>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Exluir</h5>
+                      <button class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      Tem certeza que deseja excluir este produto?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        Cancelar
+                      </button>
+                      <button type="button" class="btn btn-primary" (click)="btnSimProduto(item.idProduto)">
+                        Sim
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="col-12">
@@ -106,19 +107,13 @@
           </div>
 
           <div class="row align-items-center justify-content-center">
-            <a routerLink="/form-produto" class="btn btn-outline-primary"
-              >Cadastrar novo Produto
+            <a routerLink="/form-produto" class="btn btn-outline-primary">Cadastrar novo Produto
             </a>
           </div>
         </div>
         <!-- /produtos -->
       </div>
-      <div
-        class="tab-pane fade"
-        id="profile"
-        role="tabpanel"
-        aria-labelledby="profile-tab"
-      >
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <!-- categorias -->
         <!-- Categorias -->
         <h1 class="d-flex justify-content-center p-3 mt-3">
@@ -143,18 +138,49 @@
                 <td>{{ item.subSecaoCategoria }}</td>
                 <td>{{ item.animalCategoria }}</td>
                 <td>
-                  <a [routerLink]="['/put-categoria', item.idCategoria]"
-                    ><i class="fas fa-edit text-warning cursor-pointer"></i
-                  ></a>
+                  <a [routerLink]="['/put-categoria', item.idCategoria]"><i
+                      class="fas fa-edit text-warning cursor-pointer"></i></a>
                 </td>
-                <td><i class="fas fa-trash text-danger cursor-pointer"></i></td>
+                <td>
+                  <!-- Button trigger modal -->
+                  <a type="button" class="cursor-pointer" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fas fa-trash text-danger cursor-pointer"></i>
+                  </a>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">
+                            Exluir
+                          </h5>
+                          <button class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          Tem certeza que deseja excluir esta Categoria?
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Cancelar
+                          </button>
+                          <button type="button" class="btn btn-primary" (click)="btnSimCategoria(item.idCategoria)">
+                            Sim
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
               </tr>
             </tbody>
           </table>
           <hr />
           <div class="row p-5 align-items-center justify-content-center">
-            <a routerLink="/form-categoria" class="btn btn-outline-primary"
-              >Cadastrar nova Categoria
+            <a routerLink="/form-categoria" class="btn btn-outline-primary">Cadastrar nova Categoria
             </a>
           </div>
         </div>
@@ -162,5 +188,48 @@
         <!-- /categorias -->
       </div>
     </div>
+
+    <div class="col-10 mx-auto col-lg-2">
+      <strong class="d-lg-none">Total: </strong>
+      <strong>R${{ item.precoProduto }}</strong>
+    </div>
+    <div class="col-12">
+      <hr />
+    </div>
+  </div>
+
+  <div class="row align-items-center justify-content-center">
+    <a routerLink="/form-produto" class="btn btn-outline-primary"
+      >Cadastrar novo Produto
+    </a>
+  </div>
+  <hr />
+</div>
+<!-- Categorias -->
+<h1 class="d-flex justify-content-center p-3">Tipos de categorias</h1>
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Subcategoria</th>
+        <th scope="col">Animal categoria</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listaCategoria">
+        <th scope="row">{{ item.idCategoria }}</th>
+        <td>{{ item.secaoCategoria }}</td>
+        <td>{{ item.subSecaoCategoria }}</td>
+        <td>{{ item.animalCategoria }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+  <div class="row p-5 align-items-center justify-content-center">
+    <a routerLink="/form-categoria" class="btn btn-outline-primary"
+      >Cadastrar nova categoria
+    </a>
   </div>
 </div>

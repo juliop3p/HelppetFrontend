@@ -34,4 +34,11 @@ export class ProdutoService {
       this.token
     );
   }
+
+  deleteProduto(id: number){
+    return this.http.delete(
+      `http://localhost:8080/produtos/${id}`, this.token
+    )
+
+  }
 }
