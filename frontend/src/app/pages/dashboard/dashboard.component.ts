@@ -3,6 +3,7 @@ import { CategoriaService } from './../../services/categoria.service';
 import { ProdutoService } from './../../services/produto.service';
 import { Categoria } from './../../model/Categoria';
 import { Produto } from './../../model/Produto';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +13,9 @@ import { Produto } from './../../model/Produto';
 export class DashboardComponent implements OnInit {
   listaCategoria: Categoria[];
   listaProduto: Produto[];
-
+  produto: Produto = new Produto;
+  categoria: Categoria = new Categoria;
+  
   findAllCategoria() {
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
       this.listaCategoria = resp;
@@ -27,11 +30,29 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private categoriaService: CategoriaService,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+  
   ) {}
 
   ngOnInit() {
     this.findAllCategoria();
     this.findAllProduto();
   }
+
+  btnSimProduto(id: number){
+    this.produtoService.deleteProduto(id).subscribe(()=>{
+      
+
+      this.findAllProduto()
+    })
+
+}
+
+btnSimCategoria(id: number){
+  this.categoriaService.deleteCategoria(id).subscribe(()=>{
+    this.findAllCategoria()
+  })
+
+}
+
 }
