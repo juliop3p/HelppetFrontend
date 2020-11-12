@@ -28,10 +28,11 @@ export class ProdutoService {
   }
 
   postProduto(produto: Produto) {
-    return this.http.post(
-      'http://localhost:8080/produtos',
-      produto,
-      this.token
-    );
+    return this.http.post('http://localhost:8080/produtos', produto,this.token);
   }
+ 
+  putProduto(produto: Produto){
+    return this.http.put(`http://localhost:8080/produto/${produto.idProduto}`,produto);
+  }
+
 }
