@@ -45,28 +45,20 @@
           id="inputGroupSelect01"
         >
           <option selected value="1">{{ produto.estoqueProduto }}</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
         </select>
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button">
-            Selecionar
-          </button>
-        </div>
+        <div class="input-group-append"></div>
       </div>
 
       <div class="p-2">
-        <a
+        <button
+          (click)="adicionarCarrinho(produto)"
           class="btn btn-lg btn-green w-100"
           routerLink="/carrinho"
           role="button"
         >
           <i class="fas fa-shopping-cart mr-2"></i>
-          Comprar</a
-        >
+          Comprar
+        </button>
       </div>
       <div class="p-2">
         <a

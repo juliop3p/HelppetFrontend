@@ -1,3 +1,46 @@
+<nav class="navbar navbar-expand-lg bg-green-dark">
+  <div class="container">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav w-100 d-flex justify-content-between">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle text-white"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <fa-icon [icon]="faBars" class="faCartPlus fa-1x p-3"></fa-icon>
+            Menu
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a
+              *ngFor="let item of listaCategoria"
+              class="dropdown-item cursor-pointer"
+              (click)="findAllByCategoria(item)"
+              >{{ item }}</a
+            >
+            <a class="dropdown-item cursor-pointer" (click)="findAllProduto()"
+              >Todos</a
+            >
+          </div>
+        </li>
+        <div class="d-flex">
+          <li class="nav-item mr-5">
+            <a class="nav-link text-white" href="#" routerLink="/sobre"
+              >Quem somos</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Entre em contato</a>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
 <!--container-->
 <div class="container-fluid w-100 p-0">
   <!--Carousel-->
@@ -117,11 +160,11 @@
   <div class="container">
     <div class="row justify-content-center">
       <div *ngFor="let item of listaProduto">
-        <a [routerLink]="['/produto', item.idProduto]" class="container">
+        <div class="container">
           <div class="card mx-2 my-2">
-            <div class="imgBx">
+            <a [routerLink]="['/produto', item.idProduto]" class="imgBx">
               <img src="{{ item.imagemProduto }}" alt="Produto" />
-            </div>
+            </a>
             <div class="contentBx">
               <h2>{{ item.nomeProduto }}</h2>
               <strong class="lead font-weight-bold price">
@@ -133,27 +176,15 @@
                 }}</strong
               >
 
-              <a class="lead text-success" routerLink="/produto"
+              <a
+                class="lead text-success cursor-pointer"
+                (click)="adicionarCarrinho(item)"
                 >Adicionar ao Carrinho</a
               >
             </div>
           </div>
-        </a>
+        </div>
       </div>
-    </div>
-    <div class="row my-5 justify-content-center">
-      <nav aria-label="...">
-        <ul class="pagination pagination-lg">
-          <li class="page-item active" aria-current="page">
-            <span class="page-link">
-              1
-              <span class="sr-only">(current)</span>
-            </span>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-        </ul>
-      </nav>
     </div>
   </div>
   <!--/container-->

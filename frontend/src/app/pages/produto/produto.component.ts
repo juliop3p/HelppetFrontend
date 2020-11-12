@@ -1,3 +1,4 @@
+import { CarrinhoService } from './../../services/carrinho.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Produto } from 'src/app/model/Produto';
@@ -22,7 +23,8 @@ export class ProdutoComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private carrinhoService: CarrinhoService
   ) {}
 
   ngOnInit() {
@@ -31,5 +33,9 @@ export class ProdutoComponent implements OnInit {
     this.idProduto = this.route.snapshot.params['id'];
 
     this.findByIdProduto();
+  }
+
+  adicionarCarrinho(produto: Produto) {
+    this.carrinhoService.adicionar(produto);
   }
 }

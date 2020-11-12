@@ -22,6 +22,10 @@ a {
   text-decoration: none !important;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .bg-green {
   background-color: var(--color-green);
 }
