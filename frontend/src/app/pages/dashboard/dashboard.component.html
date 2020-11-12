@@ -188,5 +188,48 @@
         <!-- /categorias -->
       </div>
     </div>
+
+    <div class="col-10 mx-auto col-lg-2">
+      <strong class="d-lg-none">Total: </strong>
+      <strong>R${{ item.precoProduto }}</strong>
+    </div>
+    <div class="col-12">
+      <hr />
+    </div>
+  </div>
+
+  <div class="row align-items-center justify-content-center">
+    <a routerLink="/form-produto" class="btn btn-outline-primary"
+      >Cadastrar novo Produto
+    </a>
+  </div>
+  <hr />
+</div>
+<!-- Categorias -->
+<h1 class="d-flex justify-content-center p-3">Tipos de categorias</h1>
+<div class="container">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Subcategoria</th>
+        <th scope="col">Animal categoria</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listaCategoria">
+        <th scope="row">{{ item.idCategoria }}</th>
+        <td>{{ item.secaoCategoria }}</td>
+        <td>{{ item.subSecaoCategoria }}</td>
+        <td>{{ item.animalCategoria }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+  <div class="row p-5 align-items-center justify-content-center">
+    <a routerLink="/form-categoria" class="btn btn-outline-primary"
+      >Cadastrar nova categoria
+    </a>
   </div>
 </div>
