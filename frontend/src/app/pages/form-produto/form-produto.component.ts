@@ -53,6 +53,14 @@ export class FormProdutoComponent implements OnInit {
   }
 
   ngOnInit() {
+    const token = localStorage.getItem('token');
+    const admin = localStorage.getItem('admin');
+
+    if (token === null && admin !== 'true') {
+      this.router.navigate(['/login']);
+      return alert('Você precisar ser administrador para entrar nessa página!');
+    }
+
     this.findAllCategoria();
   }
 
@@ -79,18 +87,4 @@ export class FormProdutoComponent implements OnInit {
         });
     }
   }
-
-  // findAllProduto() {
-  //   this.produtoService.getAllProduto().subscribe((resp: Produto[]) => {
-  //     this.listaProduto = resp;
-  //   });
-  // }
-
-  // findByIdProduto() {
-  //   this.produtoService
-  //     .getByIdProduto(this.produto.idProduto)
-  //     .subscribe((resp: Produto) => {
-  //       this.produto = resp;
-  //     });
-  // }
 }

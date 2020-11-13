@@ -19,26 +19,21 @@ export class FormCategoriaComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.findAllCategoria();
-  }
+    const token = localStorage.getItem('token');
+    const admin = localStorage.getItem('admin');
 
-  findAllCategoria() {
-    this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
-      this.listaCategoria = resp;
-      console.log(this.listaCategoria);
-    });
-  }
-
-  findByIdCategoria() {
-    this.categoriaService
-      .getByIdCategoria(this.categoria.idCategoria)
-      .subscribe((resp: Categoria) => {
-        this.categoria = resp;
-      });
+    if (token === null && admin !== 'true') {
+      this.router.navigate(['/login']);
+      return alert('Você precisar ser administrador para entrar nessa página!');
+    }
   }
 
   cadastrar() {
-    if (this.categoria.animalCategoria == null || this.categoria.subSecaoCategoria == null || this.categoria.secaoCategoria == null) {
+    if (
+      this.categoria.animalCategoria == null ||
+      this.categoria.subSecaoCategoria == null ||
+      this.categoria.secaoCategoria == null
+    ) {
       alert('Preencha o campo da categoria corretamente');
     } else {
       this.categoriaService

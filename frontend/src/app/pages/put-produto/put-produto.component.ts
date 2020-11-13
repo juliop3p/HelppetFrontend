@@ -55,6 +55,14 @@ export class PutProdutoComponent implements OnInit {
   }
 
   ngOnInit() {
+    const token = localStorage.getItem('token');
+    const admin = localStorage.getItem('admin');
+
+    if (token === null && admin !== 'true') {
+      this.router.navigate(['/login']);
+      return alert('Você precisar ser administrador para entrar nessa página!');
+    }
+
     this.findAllCategoria();
 
     this.idProduto = this.route.snapshot.params['id'];

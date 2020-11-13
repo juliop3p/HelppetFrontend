@@ -1,9 +1,9 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from './../../services/categoria.service';
 import { ProdutoService } from './../../services/produto.service';
 import { Categoria } from './../../model/Categoria';
 import { Produto } from './../../model/Produto';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,6 +16,8 @@ export class DashboardComponent implements OnInit {
   listaProduto: Produto[];
   produto: Produto = new Produto();
   categoria: Categoria = new Categoria();
+
+  showProdutos: boolean = true;
 
   findAllCategoria() {
     this.categoriaService.getAllCategoria().subscribe((resp: Categoria[]) => {
@@ -31,10 +33,19 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     private categoriaService: CategoriaService,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private router: Router
   ) {}
 
   ngOnInit() {
+    const token = localStorage.getItem('token');
+    const admin = localStorage.getItem('admin');
+
+    if (token === null && admin !== 'true') {
+      this.router.navigate(['/login']);
+      return alert('Você precisar ser administrador para entrar nessa página!');
+    }
+
     this.findAllCategoria();
     this.findAllProduto();
   }
@@ -53,5 +64,9 @@ export class DashboardComponent implements OnInit {
     this.categoriaService.deleteCategoria(this.id).subscribe(() => {
       this.findAllCategoria();
     });
+  }
+
+  changeTab() {
+    this.showProdutos = !this.showProdutos;
   }
 }

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { CarrinhoService } from './../../services/carrinho.service';
 import { Component, OnInit } from '@angular/core';
 import { Produto } from 'src/app/model/Produto';
@@ -14,9 +15,19 @@ export class CarrinhoComponent implements OnInit {
 
   listaProdutos: Produto[];
 
-  constructor(private carrinhoService: CarrinhoService) {}
+  constructor(
+    private carrinhoService: CarrinhoService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
+    const token = localStorage.getItem('token');
+
+    if (token === null) {
+      this.router.navigate(['/login']);
+      return alert('Você precisar estar logado para entrar nessa página!');
+    }
+
     window.scroll(0, 0);
     this.listaProdutos = this.carrinhoService.listar();
     this.updateValor();

@@ -66,10 +66,6 @@
           src="https://cobasi.vteximg.com.br/arquivos/ids/361197/SUPER-BLACK-NOVEMBER-DESKTOP-03-11.gif?v=637396810744300000"
           alt="Primeiro Slide"
         />
-        <!--div class="carousel-caption d-none d-md-block">
-          <h5>...</h5>
-          <p>...</p>
-        </div-->
       </div>
       <div class="carousel-item">
         <img
@@ -78,10 +74,6 @@
           src="https://cobasi.vteximg.com.br/arquivos/ids/361197/SUPER-BLACK-NOVEMBER-DESKTOP-03-11.gif?v=637396810744300000"
           alt="Segundo Slide"
         />
-        <!--div class="carousel-caption d-none d-md-block">
-          <h5>Teste</h5>
-          <p>123</p>
-        </div-->
       </div>
       <div class="carousel-item">
         <img
@@ -90,10 +82,6 @@
           src="https://cobasi.vteximg.com.br/arquivos/ids/361197/SUPER-BLACK-NOVEMBER-DESKTOP-03-11.gif?v=637396810744300000"
           alt="Terceiro Slide"
         />
-        <!--div class="carousel-caption d-none d-md-block">
-          <h5>...</h5>
-          <p>...</p>
-        </div-->
       </div>
     </div>
     <a
@@ -122,25 +110,25 @@
 <div class="container-fluid bg-image">
   <!--container-->
   <div class="container w-100">
-    <div class="row w-100 mt-5">
+    <div class="row justify-content-center w-100 mt-5">
       <div class="col-12">
         <h2 class="text-center mb-5">Nossas Promoções</h2>
       </div>
-      <a routerLink="/produto" class="col-4 card-hover">
+      <a routerLink="/produto" class="col-8 col-md-4 mb-3 card-hover">
         <img
           src="assets/card-gato-50.png"
           alt="Promoção"
           class="img-fluid rounded"
         />
       </a>
-      <a routerLink="/produto" class="col-4 card-hover">
+      <a routerLink="/produto" class="col-8 col-md-4 mb-3 card-hover">
         <img
           src="https://cobasi.vteximg.com.br/arquivos/ids/362416/TAPETE-BLUE-SQUARE-06-11.png?v=637400254671330000"
           alt="Promoção"
           class="img-fluid"
         />
       </a>
-      <a routerLink="/produto" class="col-4 card-hover">
+      <a routerLink="/produto" class="col-8 col-md-4 mb-3 card-hover">
         <img
           src="https://cobasi.vteximg.com.br/arquivos/ids/362416/TAPETE-BLUE-SQUARE-06-11.png?v=637400254671330000"
           alt="Promoção"
@@ -167,7 +155,7 @@
             </a>
             <div class="contentBx">
               <h2>{{ item.nomeProduto }}</h2>
-              <strong class="lead font-weight-bold price">
+              <strong class="lead text-primary font-weight-bold price">
                 {{
                   item.precoProduto.toLocaleString("pt-br", {
                     style: "currency",
@@ -175,7 +163,6 @@
                   })
                 }}</strong
               >
-
               <a
                 class="lead text-success cursor-pointer"
                 (click)="adicionarCarrinho(item)"
