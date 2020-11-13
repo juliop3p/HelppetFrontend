@@ -114,6 +114,7 @@
     <div class="col-10 mx-auto col-lg-1">
       <!-- Button trigger modal -->
       <a
+        (click)="armazenarId(item.idProduto)"
         type="button"
         class="cursor-pointer"
         data-toggle="modal"
@@ -154,7 +155,7 @@
                 type="button"
                 class="btn btn-primary"
                 data-dismiss="modal"
-                (click)="btnSimProduto(item.idProduto)"
+                (click)="btnSimProduto()"
               >
                 Sim
               </button>
@@ -193,7 +194,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of listaCategoria">
-        <th scope="row">{{ item.idCategoria }}</th>
+        <td scope="row">{{ item.idCategoria }}</td>
         <td>{{ item.secaoCategoria }}</td>
         <td>{{ item.subSecaoCategoria }}</td>
         <td>{{ item.animalCategoria }}</td>
@@ -205,6 +206,7 @@
         <td>
           <!-- Button trigger modal -->
           <div
+            (click)="armazenarId(item.idCategoria)"
             type="button"
             class="cursor-pointer"
             data-toggle="modal"
@@ -249,7 +251,7 @@
                     type="button"
                     class="btn btn-primary"
                     data-dismiss="modal"
-                    (click)="btnSimCategoria(item.idCategoria)"
+                    (click)="btnSimCategoria()"
                   >
                     Save changes
                   </button>

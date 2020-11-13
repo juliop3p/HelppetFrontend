@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
+  id: number;
   listaCategoria: Categoria[];
   listaProduto: Produto[];
   produto: Produto = new Produto();
@@ -38,15 +39,18 @@ export class DashboardComponent implements OnInit {
     this.findAllProduto();
   }
 
-  btnSimProduto(id: number) {
-    this.produtoService.deleteProduto(id).subscribe(() => {
+  armazenarId(id: number) {
+    this.id = id;
+  }
+
+  btnSimProduto() {
+    this.produtoService.deleteProduto(this.id).subscribe(() => {
       this.findAllProduto();
     });
   }
 
-  btnSimCategoria(id: number) {
-    console.log('Aqui ', id);
-    this.categoriaService.deleteCategoria(id).subscribe(() => {
+  btnSimCategoria() {
+    this.categoriaService.deleteCategoria(this.id).subscribe(() => {
       this.findAllCategoria();
     });
   }
