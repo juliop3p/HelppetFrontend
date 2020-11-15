@@ -11,8 +11,10 @@ export class CarrinhoService {
   constructor(private router: Router) {}
 
   adicionar(produto: Produto) {
-    this.produtos.push(produto);
-    this.router.navigate(['/carrinho']);
+    if (produto) {
+      this.produtos.push(produto);
+      this.router.navigate(['/carrinho']);
+    }
   }
 
   listar() {

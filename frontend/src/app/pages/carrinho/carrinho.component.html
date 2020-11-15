@@ -56,11 +56,11 @@
         <div class="col-10 mx-auto col-lg-2">
           <div class="col-10 mx-auto col-lg-2 my-2 my-lg-0">
             <div class="d-flex justify-content-center">
-              <span class="btn btn-outline-dark mx-1">-</span>
+              <span class="btn btn-outline-dark mx-1" (click)="removeQuantidade(item.idProduto)">-</span>
               <span class="btn btn-outline-dark mx-1">{{
                 item.quantidade
               }}</span>
-              <span class="btn btn-outline-dark mx-1"> + </span>
+              <span class="btn btn-outline-dark mx-1" (click)="addQuantidade(item.idProduto)"> + </span>
             </div>
           </div>
         </div>

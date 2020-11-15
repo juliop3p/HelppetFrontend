@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
   findAllProduto() {
     this.produtoService.getAllProduto().subscribe((resp: Produto[]) => {
       this.listaProduto = resp;
+      this.listaProduto.forEach((produto) => (produto.quantidade = 1));
     });
   }
 
@@ -60,6 +61,7 @@ export class HomeComponent implements OnInit {
           produtosArray.map((produto) => produtos.push(produto))
         );
       this.listaProduto = produtos;
+      this.listaProduto.forEach((produto) => (produto.quantidade = 1));
       window.scroll(0, 900);
     });
   }

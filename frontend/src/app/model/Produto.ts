@@ -9,4 +9,6 @@ export class Produto {
   estoqueProduto: number;
   descricaoProduto: string;
   categoria: Categoria;
+  quantidade: number;
+  onCart: boolean;
 }

@@ -9,11 +9,10 @@ import { Produto } from 'src/app/model/Produto';
   styleUrls: ['./carrinho.component.css'],
 })
 export class CarrinhoComponent implements OnInit {
+  listaProdutos: Produto[];
   subTotal: number = 0;
   frete: number = 20;
   total: number = 0;
-
-  listaProdutos: Produto[];
 
   constructor(
     private carrinhoService: CarrinhoService,
@@ -43,9 +42,32 @@ export class CarrinhoComponent implements OnInit {
   updateValor() {
     this.subTotal = 0;
     this.listaProdutos.map(
-      (produto) => (this.subTotal += produto.precoProduto)
+      (produto) => (this.subTotal += produto.precoProduto * produto.quantidade)
     );
     this.total = this.subTotal + this.frete;
+  }
+
+  addQuantidade(id: number) {
+    this.listaProdutos.forEach((produto) => {
+      if (produto.idProduto === id) {
+        if (produto.quantidade + 1 <= produto.estoqueProduto)
+          produto.quantidade++;
+      }
+    });
+    this.updateValor();
+  }
+
+  removeQuantidade(id: number) {
+    this.listaProdutos.forEach((produto) => {
+      if (produto.idProduto === id) {
+        if (produto.quantidade > 1) {
+          produto.quantidade--;
+        } else {
+          this.removeProduto(id);
+        }
+      }
+    });
+    this.updateValor();
   }
 
   limparCarrinho() {
