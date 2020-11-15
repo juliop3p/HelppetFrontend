@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import { FormCategoriaComponent } from './pages/form-categoria/form-categoria.co
 import { FormProdutoComponent } from './pages/form-produto/form-produto.component';
 import { PutCategoriaComponent } from './pages/put-categoria/put-categoria.component';
 import { PutProdutoComponent } from './pages/put-produto/put-produto.component';
+import { ModalCompraComponent } from './components/modal-compra/modal-compra.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { PutProdutoComponent } from './pages/put-produto/put-produto.component';
     FormProdutoComponent,
     PutCategoriaComponent,
     PutProdutoComponent,
+    ModalCompraComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,7 @@ import { PutProdutoComponent } from './pages/put-produto/put-produto.component';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
+    NgxPayPalModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

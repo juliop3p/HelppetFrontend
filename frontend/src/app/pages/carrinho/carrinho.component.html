@@ -56,11 +56,20 @@
         <div class="col-10 mx-auto col-lg-2">
           <div class="col-10 mx-auto col-lg-2 my-2 my-lg-0">
             <div class="d-flex justify-content-center">
-              <span class="btn btn-outline-dark mx-1" (click)="removeQuantidade(item.idProduto)">-</span>
+              <span
+                class="btn btn-outline-dark mx-1"
+                (click)="removeQuantidade(item.idProduto)"
+                >-</span
+              >
               <span class="btn btn-outline-dark mx-1">{{
                 item.quantidade
               }}</span>
-              <span class="btn btn-outline-dark mx-1" (click)="addQuantidade(item.idProduto)"> + </span>
+              <span
+                class="btn btn-outline-dark mx-1"
+                (click)="addQuantidade(item.idProduto)"
+              >
+                +
+              </span>
             </div>
           </div>
         </div>
@@ -149,12 +158,28 @@
           <button
             class="btn btn-outline-success btn-lg text-uppercase mb-3 px-5 w-100"
             type="button"
+            (click)="compraIniciada()"
           >
             <i class="fas fa-shopping-basket mr-3"></i>
             Comprar
           </button>
         </a>
+        <ngx-paypal [config]="payPalConfig"></ngx-paypal>
       </div>
     </div>
+  </div>
+</div>
+
+<div *ngIf="finalizarCompra">
+  <div
+    class="container-fluid modal-compra height-100 d-flex flex-column align-items-center justify-content-center"
+  >
+    <i class="fas fa-check-circle"></i>
+    <h1>Compra Realizada com sucesso</h1>
+    <p>
+      Sua compra foi finalizada com sucesso. Iremos processar o seu pedido e em
+      breve entraremos em contato para mais detalhes.
+    </p>
+    <button (click)="compraFinalizada()">OK</button>
   </div>
 </div>

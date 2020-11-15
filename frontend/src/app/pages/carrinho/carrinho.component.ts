@@ -1,6 +1,7 @@
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CarrinhoService } from './../../services/carrinho.service';
-import { Component, OnInit } from '@angular/core';
+import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
 import { Produto } from 'src/app/model/Produto';
 
 @Component({
@@ -13,6 +14,9 @@ export class CarrinhoComponent implements OnInit {
   subTotal: number = 0;
   frete: number = 20;
   total: number = 0;
+  finalizarCompra: boolean = false;
+
+  public payPalConfig?: IPayPalConfig;
 
   constructor(
     private carrinhoService: CarrinhoService,
@@ -26,7 +30,7 @@ export class CarrinhoComponent implements OnInit {
       this.router.navigate(['/login']);
       return alert('Você precisar estar logado para entrar nessa página!');
     }
-
+    this.initConfig();
     window.scroll(0, 0);
     this.listaProdutos = this.carrinhoService.listar();
     this.updateValor();
@@ -78,5 +82,88 @@ export class CarrinhoComponent implements OnInit {
   removeProduto(id: number) {
     this.listaProdutos = this.carrinhoService.removeProduto(id);
     this.updateValor();
+  }
+
+  compraFinalizada() {
+    this.finalizarCompra = false;
+    this.router.navigate(['/home']);
+    this.limparCarrinho();
+  }
+
+  compraIniciada() {
+    if (this.listaProdutos.length > 0) {
+      this.finalizarCompra = true;
+    }
+  }
+
+  private initConfig(): void {
+    this.payPalConfig = {
+      currency: 'EUR',
+      clientId: 'sb',
+      // createOrder: (data) =>
+      //   <ICreateOrderRequest>{
+      //     intent: 'CAPTURE',
+      //     purchase_units: [
+      //       {
+      //         amount: {
+      //           currency_code: 'EUR',
+      //           value: '9.99',
+      //           breakdown: {
+      //             item_total: {
+      //               currency_code: 'EUR',
+      //               value: '9.99',
+      //             },
+      //           },
+      //         },
+      //         items: [
+      //           {
+      //             name: 'Enterprise Subscription',
+      //             quantity: '1',
+      //             category: 'DIGITAL_GOODS',
+      //             unit_amount: {
+      //               currency_code: 'EUR',
+      //               value: '9.99',
+      //             },
+      //           },
+      //         ],
+      //       },
+      //     ],
+      //   },
+      advanced: {
+        commit: 'true',
+      },
+      style: {
+        label: 'paypal',
+        layout: 'vertical',
+      },
+      onApprove: (data, actions) => {
+        console.log(
+          'onApprove - transaction was approved, but not authorized',
+          data,
+          actions
+        );
+        actions.order.get().then((details) => {
+          console.log(
+            'onApprove - you can get full order details inside onApprove: ',
+            details
+          );
+        });
+      },
+      onClientAuthorization: (data) => {
+        console.log(
+          'onClientAuthorization - you should probably inform your server about completed transaction at this point',
+          data
+        );
+      },
+      onCancel: (data, actions) => {
+        console.log('OnCancel', data, actions);
+      },
+      onError: (err) => {
+        console.log('OnError', err);
+      },
+      onClick: (data, actions) => {
+        console.log('onClick', data, actions);
+      },
+    };
   }
 }

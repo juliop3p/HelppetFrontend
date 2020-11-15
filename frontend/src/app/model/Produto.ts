@@ -10,5 +10,4 @@ export class Produto {
   descricaoProduto: string;
   categoria: Categoria;
   quantidade: number;
-  onCart: boolean;
 }
