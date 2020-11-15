@@ -22,7 +22,6 @@ import { FormCategoriaComponent } from './pages/form-categoria/form-categoria.co
 import { FormProdutoComponent } from './pages/form-produto/form-produto.component';
 import { PutCategoriaComponent } from './pages/put-categoria/put-categoria.component';
 import { PutProdutoComponent } from './pages/put-produto/put-produto.component';
-import { ModalCompraComponent } from './components/modal-compra/modal-compra.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +41,6 @@ import { ModalCompraComponent } from './components/modal-compra/modal-compra.com
     FormProdutoComponent,
     PutCategoriaComponent,
     PutProdutoComponent,
-    ModalCompraComponent,
   ],
   imports: [
     BrowserModule,
