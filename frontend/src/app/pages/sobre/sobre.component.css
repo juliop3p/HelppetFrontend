@@ -104,3 +104,11 @@
    color: white;
    list-style-type: none;
 }
+
+.button {
+   cursor: pointer;
+ }
+ 
+ .button:hover {
+   opacity: 0.8;
+ }
