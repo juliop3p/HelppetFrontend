@@ -57,6 +57,10 @@ a {
   color: #fff !important;
 }
 
+.text-green {
+  color: #07b154;
+}
+
 .btn-blue {
   background-color: var(--color-blue) !important;
   color: #fff !important;

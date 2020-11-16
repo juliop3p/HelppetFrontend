@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgxPayPalModule } from 'ngx-paypal';
+import { NgxNavigationWithDataComponent } from 'ngx-navigation-with-data';
 import { OrderModule } from 'ngx-order-pipe';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
@@ -45,7 +46,6 @@ import { AlertasComponent } from './alertas/alertas.component';
     PutCategoriaComponent,
     PutProdutoComponent,
     AlertasComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -55,9 +55,9 @@ import { AlertasComponent } from './alertas/alertas.component';
     FormsModule,
     NgxPayPalModule,
     OrderModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
   ],
-  providers: [],
+  providers: [NgxNavigationWithDataComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

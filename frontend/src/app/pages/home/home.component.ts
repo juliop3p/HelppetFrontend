@@ -1,8 +1,8 @@
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { NgxNavigationWithDataComponent } from 'ngx-navigation-with-data';
 import { Categoria } from './../../model/Categoria';
 import { CategoriaService } from './../../services/categoria.service';
 import { CarrinhoService } from './../../services/carrinho.service';
-import { Component, OnInit } from '@angular/core';
 import { Produto } from 'src/app/model/Produto';
 import { ProdutoService } from 'src/app/services/produto.service';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -36,13 +36,25 @@ export class HomeComponent implements OnInit {
   constructor(
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private carrinhoService: CarrinhoService
+    private carrinhoService: CarrinhoService,
+    public navCtrl: NgxNavigationWithDataComponent
   ) {}
 
   ngOnInit() {
     window.scroll(0, 0);
-    this.findAllProduto();
-    this.findAllCategoria();
+
+    if (this.navCtrl.get('state')) {
+      this.findAllCategoria();
+      this.listaProduto = this.navCtrl.get('state');
+      if (this.listaProduto.length < 1) {
+        this.findAllProduto();
+        this.findAllCategoria();
+      }
+      window.scroll(0, 900);
+    } else {
+      this.findAllProduto();
+      this.findAllCategoria();
+    }
   }
 
   adicionarCarrinho(produto: Produto) {

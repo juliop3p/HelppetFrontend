@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-gray-dark">
+<nav class="navbar navbar-expand-lg bg-green-dark">
   <div class="container">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav w-100 d-flex justify-content-between">
@@ -34,23 +34,25 @@
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="https://wa.me/5511981238234O?text=Sejam bem-vindes ao chat da HelpPet!%20Em%20que%20podemos%20te%20ajudar?%20:)" target="_blank:">Entre em contato&ensp;<img
-            style="height: 25px; width: 25px"
-            src="assets/whatsapp.png"
-            alt="whatsapp"
-        /></a>
-
             <a
               class="nav-link text-white"
-              href="https://wa.me/5511981238234O?text=Seja bem-vinde ao chat da HelpPet!%20Em%20que%20podemos%20te%20ajudar?%20:)"
+              href="https://wa.me/5511981238234O?text=Sejam bem-vindes ao chat da HelpPet!%20Em%20que%20podemos%20te%20ajudar?%20:)"
               target="_blank:"
-              ><img
+              >Entre em contato&ensp;<img
                 style="height: 25px; width: 25px"
                 src="assets/whatsapp.png"
                 alt="whatsapp"
-              />&ensp;Whatsapp</a
-            >
+            /></a>
 
+            <!-- <a
+              class="nav-link text-white"
+              href="https://wa.me/5511981238234O?text=Sejam bem-vindes ao chat da HelpPet!%20Em%20que%20podemos%20te%20ajudar?%20:)"
+              target="_blank:"
+              >Entre em contato&ensp;<img
+                style="height: 25px; width: 25px"
+                src="assets/whatsapp.png"
+                alt="whatsapp"
+            /></a> -->
           </li>
         </div>
       </ul>
@@ -125,10 +127,12 @@
 
 <div class="container-fluid">
   <!--container-->
-  <div class="container w-100">
-    <div class="row justify-content-center w-100 mt-5">
+  <div class="container">
+    <div class="row mt-5">
       <div class="col-12">
-        <h2 class="text-center mb-5">Nossas Promoções</h2>
+        <h2 class="text-center font-weight-bold text-green mb-5">
+          Nossas Promoções
+        </h2>
       </div>
       <a routerLink="/produto" class="col-8 col-md-4 mb-3 card-hover">
         <img
@@ -156,16 +160,18 @@
 
   <div class="row w-100 mt-5">
     <div class="col-md-12">
-      <h2 class="text-center">Nossos produtos</h2>
+      <h2 class="text-center font-weight-bold text-green mb-5">
+        Nossos Produtos
+      </h2>
     </div>
   </div>
 
   <!--container-->
   <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-between">
       <div *ngFor="let item of listaProduto">
         <div class="container">
-          <div class="card mx-2 my-2">
+          <div class="card mb-4">
             <a [routerLink]="['/produto', item.idProduto]" class="imgBx">
               <img src="{{ item.imagemProduto }}" alt="Produto" />
             </a>
