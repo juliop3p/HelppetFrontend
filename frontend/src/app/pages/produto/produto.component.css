@@ -1,4 +1,4 @@
-.container .card {
+.container-card .card {
   position: relative;
   width: 320px;
   height: 450px;
@@ -7,7 +7,7 @@
   overflow: hidden;
 }
 
-.container .card:before {
+.container-card .card:before {
   content: "";
   position: absolute;
   top: 0;
@@ -19,10 +19,10 @@
   transition: 0.5s ease-in-out;
 }
 
-.container .card:hover:before {
+.container-card .card:hover:before {
   clip-path: circle(300px at 80% -20%);
 }
-.container .card .imgBx {
+.container-card .card .imgBx {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -32,12 +32,12 @@
   transition: 0.8s;
 }
 
-.container .card:hover .imgBx {
+.container-card .card:hover .imgBx {
   top: 0%;
   transform: translateY(0%);
 }
 
-.container .card .imgBx img {
+.container-card .card .imgBx img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -45,7 +45,7 @@
   width: 270px;
 }
 
-.container .card .contentBx {
+.container-card .card .contentBx {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -55,7 +55,7 @@
   z-index: 9999;
 }
 
-.container .card .contentBx {
+.container-card .card .contentBx {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -65,11 +65,11 @@
   z-index: 9999;
 }
 
-.container .card:hover .contentBx {
+.container-card .card:hover .contentBx {
   height: 270px;
 }
 
-.container .card .contentBx h2 {
+.container-card .card .contentBx h2 {
   font-size: 20px;
   position: relative;
   font-weight: 600;
@@ -81,7 +81,7 @@
   font-size: 24px;
 }
 
-.container .card .contentBx .size .container .card .contentBx .color {
+.container-card .card .contentBx .size .container-card .card .contentBx .color {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,20 +91,20 @@
   visibility: hidden;
 }
 
-.container .card:hover .contentBx .size {
+.container-card .card:hover .contentBx .size {
   opacity: 1;
   visibility: visible;
   transition-delay: 0.5s;
 }
 
-.container .card:hover .contentBx .color {
+.container-card .card:hover .contentBx .color {
   opacity: 1;
   visibility: visible;
   transition-delay: 0.6s;
 }
 
-.container .card .contentBx .size h3,
-.container .card .contentBx .color h3 {
+.container-card .card .contentBx .size h3,
+.container-card .card .contentBx .color h3 {
   color: rgb(48, 48, 48);
   font-weight: 300;
   font-size: 14px;
@@ -113,7 +113,7 @@
   margin-right: 10px;
 }
 
-.container .card .contentBx .size span {
+.container-card .card .contentBx .size span {
   width: 26px;
   height: 26px;
   text-align: center;
@@ -129,11 +129,11 @@
   cursor: pointer;
 }
 
-.container .card .contentBx .size span:hover {
+.container-card .card .contentBx .size span:hover {
   background: #9bdc28;
 }
 
-.container .card .contentBx .color span {
+.container-card .card .contentBx .color span {
   width: 26px;
   height: 26px;
   text-align: center;
@@ -149,23 +149,23 @@
   cursor: pointer;
 }
 
-.container .card .contentBx .color span:hover {
+.container-card .card .contentBx .color span:hover {
   background: #9bdc28;
 }
 
-.container .card .contentBx .color span:nth-child(2) {
+.container-card .card .contentBx .color span:nth-child(2) {
   background: #9bdc28;
 }
 
-.container .card .contentBx .color span:nth-child(3) {
+.container-card .card .contentBx .color span:nth-child(3) {
   background: #03a9;
 }
 
-.container .card .contentBx .color span:nth-child(4) {
+.container-card .card .contentBx .color span:nth-child(4) {
   background: #e91e63;
 }
 
-.container .card .contentBx a {
+.container-card .card .contentBx a {
   display: inline-block;
   padding: 10px 20px;
   background: #fff;
@@ -179,7 +179,7 @@
   transition: 0.5s;
 }
 
-.container .card:hover .contentBx a {
+.container-card .card:hover .contentBx a {
   opacity: 1;
   transform: translateY(0px);
   transition-delay: 0.75s;

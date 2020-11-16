@@ -31,7 +31,9 @@
 
 <!-- produtos -->
 <div *ngIf="showProdutos">
-  <h2 class="d-flex justify-content-center mt-4">Produtos</h2>
+  <h2 class="d-flex justify-content-center mt-4 font-weight-bold text-green">
+    Produtos
+  </h2>
   <div class="container-fluid mt-5 text-center d-none d-lg-block">
     <div class="row">
       <div class="col-10 mx-auto col-lg-2">
@@ -117,7 +119,12 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header border-0">
-                <h5 class="modal-title font-weight-bold text-muted" id="exampleModalLabel">Remover</h5>
+                <h5
+                  class="modal-title font-weight-bold text-muted"
+                  id="exampleModalLabel"
+                >
+                  Remover
+                </h5>
                 <button class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -163,7 +170,11 @@
 
 <!-- Categorias -->
 <div *ngIf="!showProdutos">
-  <h2 class="d-flex justify-content-center p-3 mt-4">Tipos de Categorias</h2>
+  <h2
+    class="d-flex justify-content-center p-3 mt-4 font-weight-bold text-green"
+  >
+    Tipos de Categorias
+  </h2>
   <div class="container">
     <table class="table table-hover">
       <thead>
@@ -210,7 +221,12 @@
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header border-0">
-                    <h5 class="modal-title font-weight-bold text-muted" id="exampleModalLabel">Remover</h5>
+                    <h5
+                      class="modal-title font-weight-bold text-muted"
+                      id="exampleModalLabel"
+                    >
+                      Remover
+                    </h5>
                     <button
                       type="button"
                       class="close"

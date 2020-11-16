@@ -33,20 +33,10 @@
           à vista
         </h3>
         <p class="">{{ produto.nomeProduto }}</p>
-      </div>
-      <div class="input-group mb-3 mt-4">
-        <div class="input-group-prepend">
-          <label class="input-group-text" for="inputGroupSelect01"
-            >Quantidade</label
-          >
+        <div>
+          <small class="text-muted">Quantidade em estoque: </small
+          >{{ produto.estoqueProduto }}
         </div>
-        <select
-          class="custom-select justify-content-center"
-          id="inputGroupSelect01"
-        >
-          <option selected value="1">{{ produto.estoqueProduto }}</option>
-        </select>
-        <div class="input-group-append"></div>
       </div>
 
       <div class="p-2">
@@ -61,12 +51,13 @@
         </button>
       </div>
       <div class="p-2">
-        <a
+        <button
           class="btn btn-lg btn-blue w-100"
-          routerLink="/carrinho"
+          (click)="adicionarCarrinho(produto)"
           role="button"
-          ><i class="fas fa-heart mr-2"></i>Doar</a
         >
+          <i class="fas fa-heart mr-2"></i>Doar
+        </button>
       </div>
     </div>
   </div>
@@ -91,7 +82,7 @@
 
     <div class="row justify-content-center">
       <div *ngFor="let item of listaProduto">
-        <div class="container">
+        <div class="container-card">
           <div class="card mx-2 my-2">
             <a [routerLink]="['/produto', item.idProduto]" class="imgBx">
               <img src="{{ item.imagemProduto }}" alt="Produto" />

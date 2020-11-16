@@ -1,114 +1,102 @@
- .nossas-fotos{
-    height: 200px;
-    width: 200px;
-    border-radius: 200px;
-    
-    
+.nossas-fotos {
+  height: 200px;
+  width: 200px;
+  border-radius: 200px;
 }
 
 .cor-fonte {
   color: #07b154;
-  font-size: 25px;
- }
-
- .cor-titulo {
-   color: #07b154;
-   
- }
- .letra{
-    font-size: 25x;
-   
- }
-
- .parallax {
-   background-image: url('/assets/img-quem-somos/dog-paralax.jpeg');
- 
-   min-height: 500px;
- 
-   background-attachment: fixed;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
- }
-
- .card-title {
-    font-size: 2em;
- }
-
-
-
-
-.icoGithub:hover{
-   color: #000000;
+  font-size: 3rem;
 }
 
-    
+.cor-titulo {
+  color: #07b154;
+}
+.letra {
+  font-size: 25x;
+}
+
+.parallax {
+  background-image: url("/assets/img-quem-somos/dog-paralax.jpeg");
+
+  min-height: 500px;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-title {
+  font-size: 2em;
+}
+
+.icoGithub:hover {
+  color: #000000;
+}
+
 .imgSobre {
-    width: 200px;
-    height: 200px;
-    border-radius: 75%;
+  width: 200px;
+  height: 200px;
+  border-radius: 75%;
 }
 
-.shadow{
-   width: 300px;
-   height: 300px;
-   border-radius: 50%x;
+.shadow {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%x;
 }
 
- .flip-card {
-   background-color: transparent;
-   
+.flip-card {
+  background-color: transparent;
 }
-
 
 .flip-card-inner {
-   position: relative;
-   width: 200px;
-   height: 200px;
-   text-align: center;
-   transition: transform 0.8s;
-   transform-style: preserve-3d;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
-
 
 .flip-card:hover .flip-card-inner {
-   transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
-
 
 .flip-card-front {
-   position: absolute;
-   width: 100%;
-   height: 100%;
-   -webkit-backface-visibility: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
 
-   backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .flip-card-back {
-   position: absolute;
-   width: 200px;
-   height: 200px;
-   border-radius: 75%;
-   -webkit-backface-visibility: hidden;
-  
-   backface-visibility: hidden;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 75%;
+  -webkit-backface-visibility: hidden;
+
+  backface-visibility: hidden;
 }
 
 .flip-card-back {
-   background-color: rgba(255, 255, 255, 0.637);
-   transform: rotateY(180deg);
+  background-color: rgba(255, 255, 255, 0.637);
+  transform: rotateY(180deg);
 }
 
-.flip-card-back>ul {
-   color: white;
-   list-style-type: none;
+.flip-card-back > ul {
+  color: white;
+  list-style-type: none;
 }
 
 .button {
-   cursor: pointer;
- }
- 
- .button:hover {
-   opacity: 0.8;
- }
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.8;
+}

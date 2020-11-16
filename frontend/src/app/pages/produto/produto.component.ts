@@ -19,6 +19,7 @@ export class ProdutoComponent implements OnInit {
       .getByIdProduto(this.idProduto)
       .subscribe((resp: Produto) => {
         this.produto = resp;
+        this.produto.quantidade = 1;
       });
   }
 
