@@ -16,20 +16,24 @@ export class ProdutoService {
   };
 
   getAllProduto() {
-    return this.http.get('http://localhost:8080/produtos');
+    return this.http.get('https://backend-helppet.herokuapp.com/produtos');
   }
 
   getByIdProduto(id: number) {
-    return this.http.get(`http://localhost:8080/produtos/${id}`);
+    return this.http.get(
+      `https://backend-helppet.herokuapp.com/produtos/${id}`
+    );
   }
 
   getByNomeProduto(nome: string) {
-    return this.http.get(`http://localhost:8080/produtos/produtos/${nome}`);
+    return this.http.get(
+      `https://backend-helppet.herokuapp.com/produtos/produto/${nome}`
+    );
   }
 
   postProduto(produto: Produto) {
     return this.http.post(
-      'http://localhost:8080/produtos',
+      'https://backend-helppet.herokuapp.com/produtos',
       produto,
       this.token
     );
@@ -37,12 +41,15 @@ export class ProdutoService {
 
   putProduto(produto: Produto) {
     return this.http.put(
-      `http://localhost:8080/produto/${produto.idProduto}`,
+      `https://backend-helppet.herokuapp.com/produto/${produto.idProduto}`,
       produto
     );
   }
 
   deleteProduto(id: number) {
-    return this.http.delete(`http://localhost:8080/produtos/${id}`, this.token);
+    return this.http.delete(
+      `https://backend-helppet.herokuapp.com/produtos/${id}`,
+      this.token
+    );
   }
 }

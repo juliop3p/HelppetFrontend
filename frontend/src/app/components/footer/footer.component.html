@@ -1,16 +1,54 @@
 <!-- Footer -->
-<footer class="page-footer font-small cyan darken-3 text-center pt-5 bg-green">
+<footer class="page-footer font-small cyan darken-3 text-center pt-5 bg-dark">
   <!-- Footer Elements -->
   <div class="container">
     <!-- Grid row-->
     <div class="row">
       <!-- Grid column -->
-      <div class="col-12 col-md-6 text-white mb-5 text-left">
+      <div class="col-12 col-md-4 text-white mb-5 text-left">
         <h3 class="lead font-weight-bold">Sobre a HelpPet</h3>
-        <a class="text-white" routerLink="/sobre">Quem Somos</a>
+        <a (click)="scrollTop()" class="text-white" routerLink="/sobre"
+          >Quem Somos</a
+        >
+        <div>
+          <a (click)="scrollTop()" class="text-white" routerLink="/login"
+            >Login</a
+          >
+        </div>
+        <div>
+          <a (click)="scrollTop()" class="text-white" routerLink="/cadastro"
+            >Cadastre-se</a
+          >
+        </div>
+        <div>
+          <a
+            class="text-white"
+            href="https://wa.me/5511981238234O?text=Seja bem-vinde ao chat da HelpPet!%20Em%20que%20podemos%20te%20ajudar?%20:)"
+            target="_blank:"
+            >Whatsapp</a
+          >
+        </div>
+        <div class="">
+          <a class="text-white" routerLink="/home">Nossos produtos</a>
+        </div>
+        <div class="">
+          <a class="text-white" routerLink="/carrinho">Carrinho</a>
+        </div>
       </div>
-      <div class="col-12 col-md-6">
-        <div class="mb-5 flex-center">
+
+      <div class="col-12 col-md-4 mt-5 mb-3 d-flex justify-content-center">
+        <div class="mr-md-5">
+          <a (click)="scrollTop()" routerLink="/sobre" class="card-hover"
+            ><img
+              style="height: 200px; width: 200px"
+              src="assets/logo.svg"
+              alt="logo"
+          /></a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="mb-5">
           <!-- Facebook -->
           <a class="fb-ic text-white">
             <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x">
@@ -30,6 +68,12 @@
             <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x">
             </i>
           </a>
+          <img
+            style="height: 86px; width: 240px"
+            class="mt-4"
+            src="assets/paypal.png"
+            alt="logo"
+          />
         </div>
       </div>
       <!-- Grid column -->
@@ -39,7 +83,7 @@
   <!-- Footer Elements -->
 
   <!-- Copyright -->
-  <div class="footer-copyright text-center py-3 bg-green-dark text-white">
+  <div class="footer-copyright text-center py-3 bg-gray-dark text-white">
     © 2020 Copyright:
     <a class="text-white" href="https://mdbootstrap.com/">HelpPet.com</a>
     |

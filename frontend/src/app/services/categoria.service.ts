@@ -16,28 +16,30 @@ export class CategoriaService {
   };
 
   getAllCategoria() {
-    return this.http.get('http://localhost:8080/categorias');
+    return this.http.get('https://backend-helppet.herokuapp.com/categorias');
   }
 
   getByIdCategoria(id: number) {
-    return this.http.get(`http://localhost:8080/categorias/${id}`);
+    return this.http.get(
+      `https://backend-helppet.herokuapp.com/categorias/${id}`
+    );
   }
 
   getBySecao(secao: string) {
     return this.http.get(
-      `http://localhost:8080/categorias/secaocategoria/${secao}`
+      `https://backend-helppet.herokuapp.com/categorias/secaocategoria/${secao}`
     );
   }
 
   getBySubSecao(secao: string) {
     return this.http.get(
-      `http://localhost:8080/categorias/subsecaocategoria/${secao}`
+      `https://backend-helppet.herokuapp.com/categorias/subsecaocategoria/${secao}`
     );
   }
 
   postCategoria(categoria: Categoria) {
     return this.http.post(
-      'http://localhost:8080/categorias',
+      'https://backend-helppet.herokuapp.com/categorias',
       categoria,
       this.token
     );
@@ -45,7 +47,7 @@ export class CategoriaService {
 
   putCategoria(categoria: Categoria) {
     return this.http.put(
-      `http://localhost:8080/categorias/${categoria.idCategoria}`,
+      `https://backend-helppet.herokuapp.com/categorias/${categoria.idCategoria}`,
       categoria,
       this.token
     );
@@ -53,7 +55,7 @@ export class CategoriaService {
 
   deleteCategoria(id: number) {
     return this.http.delete(
-      `http://localhost:8080/categorias/${id}`,
+      `https://backend-helppet.herokuapp.com/categorias/${id}`,
       this.token
     );
   }

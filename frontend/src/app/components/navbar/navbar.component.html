@@ -1,7 +1,7 @@
 <!--Inicio Nav Bar-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-green">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a routerLink="/home" class="navbar-left"
+    <a routerLink="/home" class="navbar-left card-hover"
       ><img style="width: 12rem" src="assets/logo.svg"
     /></a>
     <button
@@ -22,8 +22,13 @@
     >
       <form class="form-inline input-search">
         <div class="input-icon">
-          <input type="search" placeholder="Pesquise os produtos" />
-          <button class="btn" type="submit">
+          <input
+            type="search"
+            placeholder="Pesquise os produtos"
+            name="produto"
+            [(ngModel)]="produto"
+          />
+          <button class="btn" type="submit" (click)="findProdutoByNome()">
             <i class="fas fa-search"></i>
           </button>
         </div>

@@ -1,3 +1,11 @@
+.row {
+  overflow: hidden;
+}
+
+.z-index {
+  z-index: 10;
+}
+
 .form {
   width: 100%;
   position: relative;

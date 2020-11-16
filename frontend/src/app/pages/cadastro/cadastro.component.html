@@ -1,18 +1,14 @@
 <!-- Colunas sempre com metade da largura disponível, em dispositivos móveis e desktop -->
-<div class="container-fluid bg-image">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-6 d-flex justify-content-center w-100 h-100">
-      <div class="container">
-        <!--primeira linha - título-->
-        <div class="row w-100 mt-5 mb-5">
+    <div class="col-12 col-md-10 col-lg-6 z-index">
+      <!--primeira linha - título-->
+      <div class="card shadow w-100 p-5 mt-5 mb-5" style="width: 16rem">
+        <div class="row mt-5 mb-5">
           <div class="col-md-12">
             <h1 class="text-center font-weight-bold text-muted">Cadastra-se</h1>
           </div>
-        </div>
-        <!--final-->
-
-        <!--segunda linha - formulário-->
-        <div class="row mb-5 d-flex justify-content-center">
+          <!--  -->
           <div class="col-12">
             <div class="form">
               <input
@@ -122,7 +118,7 @@
             <div class="d-flex justify-content-center mt-5">
               <!--button-->
               <button
-                class="btn btn-outline-success w-50"
+                class="btn btn-green w-50 shadow"
                 type="submit"
                 (click)="cadastrar()"
               >
@@ -144,12 +140,11 @@
       <!--final-->
     </div>
 
-    <div
-      class="d-none col-md-6 bg-dark d-flex justify-content-center align-items-center"
-    >
-      <!--Logotipo -->
-      <img src="assets/logo.svg" />
-      <!--/Logotipo -->
+    <div class="d-none col-md-6 d-flex justify-content-center w-100">
+      <div
+        class="card border-0 bg-cadastro p-0 m-0 w-100 card-hover"
+        style="width: 14rem"
+      ></div>
     </div>
   </div>
 </div>

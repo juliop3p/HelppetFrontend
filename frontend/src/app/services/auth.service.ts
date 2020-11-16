@@ -10,11 +10,17 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   cadastrar(user: User) {
-    return this.http.post('http://localhost:8080/usuarios/cadastrar', user);
+    return this.http.post(
+      'https://backend-helppet.herokuapp.com/usuarios/cadastrar',
+      user
+    );
   }
 
   logar(userLogin: UserLogin) {
-    return this.http.post('http://localhost:8080/usuarios/logar', userLogin);
+    return this.http.post(
+      'https://backend-helppet.herokuapp.com/usuarios/logar',
+      userLogin
+    );
   }
 
   btnSair() {
