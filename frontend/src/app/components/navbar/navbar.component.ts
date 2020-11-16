@@ -58,6 +58,10 @@ export class NavbarComponent implements OnInit {
   }
 
   findProdutoByNome() {
+    if (this.produto === null || this.produto === undefined) {
+      return this.router.navigate(['/home']);
+    }
+    this.router.navigate(['/login']);
     this.produtoService
       .getByNomeProduto(this.produto)
       .subscribe((resp: Produto[]) => {

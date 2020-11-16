@@ -12,6 +12,7 @@ import { ProdutoService } from 'src/app/services/produto.service';
 export class ProdutoComponent implements OnInit {
   produto: Produto = new Produto();
   idProduto: number;
+  listaProduto: Produto[];
 
   findByIdProduto() {
     this.produtoService
@@ -33,9 +34,17 @@ export class ProdutoComponent implements OnInit {
     this.idProduto = this.route.snapshot.params['id'];
 
     this.findByIdProduto();
+    this.findAllProduto();
   }
 
   adicionarCarrinho(produto: Produto) {
     this.carrinhoService.adicionar(produto);
+  }
+
+  findAllProduto() {
+    this.produtoService.getAllProduto().subscribe((resp: Produto[]) => {
+      this.listaProduto = resp.slice(0, 3);
+      this.listaProduto.forEach((produto) => (produto.quantidade = 1));
+    });
   }
 }

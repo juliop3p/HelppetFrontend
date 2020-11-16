@@ -88,8 +88,33 @@
     <div class="col-md-12">
       <h3>Alguns produtos que podem te interessar...</h3>
     </div>
-    <app-card-item></app-card-item>
-    <app-card-item></app-card-item>
-    <app-card-item></app-card-item>
+
+    <div class="row justify-content-center">
+      <div *ngFor="let item of listaProduto">
+        <div class="container">
+          <div class="card mx-2 my-2">
+            <a [routerLink]="['/produto', item.idProduto]" class="imgBx">
+              <img src="{{ item.imagemProduto }}" alt="Produto" />
+            </a>
+            <div class="contentBx">
+              <h2>{{ item.nomeProduto }}</h2>
+              <strong class="lead text-primary font-weight-bold price">
+                {{
+                  item.precoProduto.toLocaleString("pt-br", {
+                    style: "currency",
+                    currency: "BRL"
+                  })
+                }}</strong
+              >
+              <a
+                class="lead text-success cursor-pointer"
+                (click)="adicionarCarrinho(item)"
+                >Adicionar ao Carrinho</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

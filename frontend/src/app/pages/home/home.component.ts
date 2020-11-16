@@ -38,11 +38,8 @@ export class HomeComponent implements OnInit {
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
     private carrinhoService: CarrinhoService,
-    private router: Router,
     public navCtrl: NgxNavigationWithDataComponent
-  ) {
-    console.log(this.navCtrl.get('state'));
-  }
+  ) {}
 
   ngOnInit() {
     window.scroll(0, 0);
@@ -50,6 +47,11 @@ export class HomeComponent implements OnInit {
     if (this.navCtrl.get('state')) {
       this.findAllCategoria();
       this.listaProduto = this.navCtrl.get('state');
+      if (this.listaProduto.length < 1) {
+        this.findAllProduto();
+        this.findAllCategoria();
+      }
+      window.scroll(0, 900);
     } else {
       this.findAllProduto();
       this.findAllCategoria();
