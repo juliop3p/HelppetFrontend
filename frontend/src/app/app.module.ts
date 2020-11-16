@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgxPayPalModule } from 'ngx-paypal';
+import { NgxNavigationWithDataComponent } from 'ngx-navigation-with-data';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -50,7 +51,7 @@ import { PutProdutoComponent } from './pages/put-produto/put-produto.component';
     FormsModule,
     NgxPayPalModule,
   ],
-  providers: [],
+  providers: [NgxNavigationWithDataComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
