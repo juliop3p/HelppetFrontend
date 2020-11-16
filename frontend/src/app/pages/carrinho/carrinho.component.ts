@@ -30,7 +30,7 @@ export class CarrinhoComponent implements OnInit {
 
     if (token === null) {
       this.router.navigate(['/login']);
-      this.alerta.showAlertSuccess('Você precisar estar logado para entrar nessa página!');
+      this.alerta.showAlertDanger('Você precisar estar logado para entrar nessa página!');
     }
     this.initConfig();
     window.scroll(0, 0);
