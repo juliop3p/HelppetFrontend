@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgxPayPalModule } from 'ngx-paypal';
 import { NgxNavigationWithDataComponent } from 'ngx-navigation-with-data';
+import { OrderModule } from 'ngx-order-pipe';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +25,7 @@ import { FormCategoriaComponent } from './pages/form-categoria/form-categoria.co
 import { FormProdutoComponent } from './pages/form-produto/form-produto.component';
 import { PutCategoriaComponent } from './pages/put-categoria/put-categoria.component';
 import { PutProdutoComponent } from './pages/put-produto/put-produto.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,7 @@ import { PutProdutoComponent } from './pages/put-produto/put-produto.component';
     FormProdutoComponent,
     PutCategoriaComponent,
     PutProdutoComponent,
+    AlertasComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +54,8 @@ import { PutProdutoComponent } from './pages/put-produto/put-produto.component';
     HttpClientModule,
     FormsModule,
     NgxPayPalModule,
+    OrderModule,
+    ModalModule.forRoot(),
   ],
   providers: [NgxNavigationWithDataComponent],
   bootstrap: [AppComponent],

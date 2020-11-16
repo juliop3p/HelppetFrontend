@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from '../../model/User';
 import { AuthService } from '../../services/auth.service';
+import { AlertasService } from '../../service/alertas.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -12,7 +13,7 @@ export class CadastroComponent implements OnInit {
   user: User = new User();
   senha: string;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router, private alerta: AlertasService) {}
 
   ngOnInit() {}
 
@@ -23,12 +24,13 @@ export class CadastroComponent implements OnInit {
   cadastrar() {
     if (this.senha === this.user.senhaUsuario) {
       this.authService.cadastrar(this.user).subscribe((resp: User) => {
-        this.user = resp;
-      });
-      this.router.navigate(['/login']);
-      alert('Cadastro efetuado com sucesso!');
-    } else {
-      alert('Suas senhas não conferem');
+      this.user = resp;
+      this.router.navigate(['/login'])
+      this.alerta.showAlertSuccess('Cadastro efetuado com sucesso!')
+    })
+   } else {
+      this.alerta.showAlertDanger('Suas senhas não conferem');
     }
   }
 }
+

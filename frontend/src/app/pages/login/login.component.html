@@ -6,108 +6,116 @@
       <div
         class="card border-0 bg-login w-100 p-5 mt-5 mb-5 card-hover"
         style="width: 10rem"
-      >
-    </div>
+      ></div>
     </div>
     <!--/Logotipo -->
     <div class="col-12 col-md-6 d-flex justify-content-center w-100 h-100">
       <div class="container w-100">
         <!--primeira linha - título-->
         <div class="card shadow w-100 p-5 mt-5 mb-5" style="width: 16rem">
-        <div class="row w-100 mt-5 mb-5">
-          <div class="col-12">
-            <h1 class="text-center font-weight-bold text-muted">Login</h1>
-          </div>
-        </div>
-        <!--final-->
-        <div class="row mb-5 d-flex justify-content-center">
-          <div class="col-12">
-            <div class="form">
-              <input
-                type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                required
-                [(ngModel)]="userLogin.usuario"
-              />
-              <label for="exampleInputEmail1" class="label-name">
-                <span class="content-name">E-mail:</span>
-              </label>
-            </div>
-
-            <div class="form">
-              <input
-                type="password"
-                class="form-control"
-                id="exampleInputPassword1"
-                [(ngModel)]="userLogin.senha"
-                required
-              />
-              <label for="exampleInputPassword1" class="label-name">
-                <span class="content-name"> Senha </span>
-              </label>
-            </div>
-            <div class="mt-4 d-flex justify-content-center">
-              <button
-                type="submit"
-                class="btn btn-green w-50 shadow"
-                (click)="entrar()"
-              >
-                Entrar
-              </button>
-            </div>
-
-            <div class="row mt-5 justify-content-between">
-              <div>
-                <a data-toggle="modal"
-                data-target="#exampleModal" class="font-weight-bold text-muted cursor-pointer"
-                  >Esqueceu sua senha?</a
-                  >
-                <!-- Modal -->
-        <div
-        class="modal fade"
-        id="exampleModal"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header border-0">
-              <h5 class="modal-title font-weight-bold text-muted" id="exampleModalLabel">Redefinir senha</h5>
-              <button class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body text-center">
-              Você receberá um email para redefinir sua senha!
-            </div>
-            <div class="modal-footer border-0">
-              <button
-                type="button"
-                class="btn btn-blue"
-                data-dismiss="modal"
-              >
-                OK
-              </button>
-              
+          <div class="row w-100 mt-5 mb-5">
+            <div class="col-12">
+              <h1 class="text-center font-weight-bold text-green">Login</h1>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-              
-
-              <div class="text-muted">
-                Não tem uma conta?&ensp;<a
-                  class="font-weight-bold text-muted"
-                  routerLink="/cadastro"
-                  >Cadastre-se</a
-                >
+          <!--final-->
+          <div class="row mb-5 d-flex justify-content-center">
+            <div class="col-12">
+              <div class="form">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  aria-describedby="emailHelp"
+                  required
+                  [(ngModel)]="userLogin.usuario"
+                />
+                <label for="exampleInputEmail1" class="label-name">
+                  <span class="content-name">E-mail:</span>
+                </label>
               </div>
-            </div>
+
+              <div class="form">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  [(ngModel)]="userLogin.senha"
+                  required
+                />
+                <label for="exampleInputPassword1" class="label-name">
+                  <span class="content-name"> Senha </span>
+                </label>
+              </div>
+              <div class="mt-4 d-flex justify-content-center">
+                <button
+                  type="submit"
+                  class="btn btn-green w-50 shadow"
+                  (click)="entrar()"
+                >
+                  Entrar
+                </button>
+              </div>
+
+              <div class="row mt-5 justify-content-between">
+                <div>
+                  <a
+                    data-toggle="modal"
+                    data-target="#exampleModal"
+                    class="font-weight-bold text-muted cursor-pointer"
+                    >Esqueceu sua senha?</a
+                  >
+                  <!-- Modal -->
+                  <div
+                    class="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    role="dialog"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header border-0">
+                          <h5
+                            class="modal-title font-weight-bold text-muted"
+                            id="exampleModalLabel"
+                          >
+                            Redefinir senha
+                          </h5>
+                          <button
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body text-center">
+                          Você receberá um email para redefinir sua senha!
+                        </div>
+                        <div class="modal-footer border-0">
+                          <button
+                            type="button"
+                            class="btn btn-blue"
+                            data-dismiss="modal"
+                          >
+                            OK
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="text-muted">
+                  Não tem uma conta?&ensp;<a
+                    class="font-weight-bold text-muted"
+                    routerLink="/cadastro"
+                    >Cadastre-se</a
+                  >
+                </div>
+              </div>
             </div>
           </div>
         </div>

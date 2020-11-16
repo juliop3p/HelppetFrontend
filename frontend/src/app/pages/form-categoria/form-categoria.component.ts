@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from '../../services/categoria.service';
 import { Categoria } from '../../model/Categoria';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 @Component({
   selector: 'app-form-categoria',
@@ -15,7 +16,8 @@ export class FormCategoriaComponent implements OnInit {
 
   constructor(
     private categoriaService: CategoriaService,
-    private router: Router
+    private router: Router,
+    private alerta: AlertasService
   ) {}
 
   ngOnInit() {
@@ -24,7 +26,7 @@ export class FormCategoriaComponent implements OnInit {
 
     if (token === null && admin !== 'true') {
       this.router.navigate(['/login']);
-      return alert('Você precisar ser administrador para entrar nessa página!');
+      this.alerta.showAlertDanger('Você precisar ser administrador para entrar nessa página!');
     }
   }
 
@@ -34,15 +36,17 @@ export class FormCategoriaComponent implements OnInit {
       this.categoria.subSecaoCategoria == null ||
       this.categoria.secaoCategoria == null
     ) {
-      alert('Preencha o campo da categoria corretamente');
+      this.alerta.showAlertDanger('Preencha o campo da categoria corretamente');
     } else {
       this.categoriaService
         .postCategoria(this.categoria)
         .subscribe((resp: Categoria) => {
           this.categoria = resp;
           this.router.navigate(['/dashboard']);
-          alert('Categoria cadastrada com sucesso!');
+          this.alerta.showAlertSuccess('Categoria cadastrada com sucesso!');
         });
     }
   }
 }
+
+[]

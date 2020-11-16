@@ -45,6 +45,10 @@
   transition: transform 0.3s ease;
 }
 
+.font-weight-bold {
+  color: #07b154;
+}
+
 .content-name {
   position: absolute;
   bottom: 5px;
