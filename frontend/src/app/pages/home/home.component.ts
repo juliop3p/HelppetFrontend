@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Categoria } from './../../model/Categoria';
 import { CategoriaService } from './../../services/categoria.service';
 import { CarrinhoService } from './../../services/carrinho.service';
@@ -35,8 +36,12 @@ export class HomeComponent implements OnInit {
   constructor(
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private carrinhoService: CarrinhoService
-  ) {}
+    private carrinhoService: CarrinhoService,
+    private router: Router
+  ) {
+    const navigation = this.router.getCurrentNavigation();
+    console.log(navigation);
+  }
 
   ngOnInit() {
     window.scroll(0, 0);

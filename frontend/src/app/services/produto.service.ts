@@ -24,7 +24,7 @@ export class ProdutoService {
   }
 
   getByNomeProduto(nome: string) {
-    return this.http.get(`http://localhost:8080/produtos/produtos/${nome}`);
+    return this.http.get(`http://localhost:8080/produtos/produto/${nome}`);
   }
 
   postProduto(produto: Produto) {

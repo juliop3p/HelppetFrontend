@@ -5,7 +5,7 @@
     <!-- Grid row-->
     <div class="row">
       <!-- Grid column -->
-      <div class="col-12 col-md-5 text-white mb-5 text-left">
+      <div class="col-12 col-md-4 text-white mb-5 text-left">
         <h3 class="lead font-weight-bold">Sobre a HelpPet</h3>
         <a (click)="scrollTop()" class="text-white" routerLink="/sobre"
           >Quem Somos</a
@@ -28,21 +28,27 @@
             >Whatsapp</a
           >
         </div>
-        <div class="mt-3">
-          <a class="text-white" routerLink="/home"
-            >Nossos produtos</a
-          >
+        <div class="">
+          <a class="text-white" routerLink="/home">Nossos produtos</a>
+        </div>
+        <div class="">
+          <a class="text-white" routerLink="/carrinho">Carrinho</a>
         </div>
       </div>
-      
-      <div class="col-12 col-md-2 mt-5">
-      <div class="d-flex justify-content-end mr-md-5">
-        <img style="height: 86px; width: 240px" src="assets/paypal.png" alt="logo">
+
+      <div class="col-12 col-md-4 mt-5 mb-3 d-flex justify-content-center">
+        <div class="mr-md-5">
+          <a (click)="scrollTop()" routerLink="/sobre" class="card-hover"
+            ><img
+              style="height: 200px; width: 200px"
+              src="assets/logo.svg"
+              alt="logo"
+          /></a>
+        </div>
       </div>
-    </div>
-        
-      <div class="col-12 col-md-5">
-        <div class="mb-5 flex-center">
+
+      <div class="col-12 col-md-4">
+        <div class="mb-5">
           <!-- Facebook -->
           <a class="fb-ic text-white">
             <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x">
@@ -62,11 +68,12 @@
             <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x">
             </i>
           </a>
-          <div class="d-flex justify-content-center mr-md-5 ">
-            <a (click)="scrollTop()" routerLink="/sobre" class="card-hover" 
-            ><img style="height: 200px; width: 200px" src="assets/logo.svg" alt="logo"></a>
-          </div>
-          
+          <img
+            style="height: 86px; width: 240px"
+            class="mt-4"
+            src="assets/paypal.png"
+            alt="logo"
+          />
         </div>
       </div>
       <!-- Grid column -->

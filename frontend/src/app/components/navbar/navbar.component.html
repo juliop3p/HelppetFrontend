@@ -22,8 +22,13 @@
     >
       <form class="form-inline input-search">
         <div class="input-icon">
-          <input type="search" placeholder="Pesquise os produtos" />
-          <button class="btn" type="submit">
+          <input
+            type="search"
+            placeholder="Pesquise os produtos"
+            name="produto"
+            [(ngModel)]="produto"
+          />
+          <button class="btn" type="submit" (click)="findProdutoByNome()">
             <i class="fas fa-search"></i>
           </button>
         </div>

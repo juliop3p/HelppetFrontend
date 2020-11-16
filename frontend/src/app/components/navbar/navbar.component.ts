@@ -1,3 +1,5 @@
+import { ProdutoService } from 'src/app/services/produto.service';
+import { Produto } from 'src/app/model/Produto';
 import { CategoriaService } from './../../services/categoria.service';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -26,8 +28,12 @@ export class NavbarComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private router: Router,
-    private categoriaService: CategoriaService
+    private categoriaService: CategoriaService,
+    private produtoService: ProdutoService
   ) {}
+
+  produto: string;
+  listaProduto: Produto[];
   listaCategoria: string[];
   user: string;
 
@@ -47,5 +53,14 @@ export class NavbarComponent implements OnInit {
   logout() {
     localStorage.clear();
     this.router.navigate(['/home']);
+  }
+
+  findProdutoByNome() {
+    this.produtoService
+      .getByNomeProduto(this.produto)
+      .subscribe((resp: Produto[]) => {
+        this.listaProduto = resp;
+        this.router.navigate(['/home', { state: this.listaProduto }]);
+      });
   }
 }

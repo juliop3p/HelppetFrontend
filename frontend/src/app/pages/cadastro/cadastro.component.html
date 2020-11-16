@@ -1,162 +1,156 @@
 <!-- Colunas sempre com metade da largura disponível, em dispositivos móveis e desktop -->
 <div class="container-fluid">
   <div class="row">
-    <div class="col-6 d-flex justify-content-center">
-      <div class="container">
-        <!--primeira linha - título-->
-        <div class="card shadow w-100 p-5 mt-5 mb-5" style="width: 16rem">
-          <div class="row mt-5 mb-5">
-            <div class="col-md-12">
-              <h1 class="text-center font-weight-bold text-muted">
-                Cadastra-se
-              </h1>
-            </div>
+    <div class="container">
+      <!--primeira linha - título-->
+      <div class="card shadow w-100 p-5 mt-5 mb-5" style="width: 16rem">
+        <div class="row mt-5 mb-5">
+          <div class="col-md-12">
+            <h1 class="text-center font-weight-bold text-muted">Cadastra-se</h1>
           </div>
-          <!--final-->
+          <!--  -->
+          <div class="col-12">
+            <div class="form">
+              <input
+                type="text"
+                class="form-control"
+                id="nomeUsuario"
+                required
+                [(ngModel)]="user.nomeUsuario"
+              />
+              <label for="nomeUsuario" class="label-name">
+                <span class="content-name"> Nome: </span>
+              </label>
+            </div>
 
-          <!--segunda linha - formulário-->
+            <div class="form">
+              <input
+                type="text"
+                class="form-control"
+                id="cpfUsuario"
+                required
+                [(ngModel)]="user.cpfUsuario"
+              />
+              <label for="cpfUsuario" class="label-name">
+                <span class="content-name"> CPF:</span></label
+              >
+            </div>
 
-          <div class="row mb-5 d-flex justify-content-center">
-            <div class="col-12">
-              <div class="form">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nomeUsuario"
-                  required
-                  [(ngModel)]="user.nomeUsuario"
-                />
-                <label for="nomeUsuario" class="label-name">
-                  <span class="content-name"> Nome: </span>
-                </label>
-              </div>
+            <div class="form">
+              <input
+                type="text"
+                class="form-control"
+                id="dataNascimentoUsuario"
+                required
+                [(ngModel)]="user.dataNascimentoUsuario"
+              />
+              <label for="dataNascimentoUsuario" class="label-name">
+                <span class="content-name"> Data de nascimento: </span>
+              </label>
+            </div>
 
-              <div class="form">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="cpfUsuario"
-                  required
-                  [(ngModel)]="user.cpfUsuario"
-                />
-                <label for="cpfUsuario" class="label-name">
-                  <span class="content-name"> CPF:</span></label
-                >
-              </div>
+            <div class="form">
+              <input
+                type="text"
+                class="form-control"
+                id="enderecoUsuario"
+                required
+                [(ngModel)]="user.enderecoUsuario"
+              />
+              <label for="enderecoUsuario" class="label-name">
+                <span class="content-name"> Endereço: </span>
+              </label>
+            </div>
 
-              <div class="form">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="dataNascimentoUsuario"
-                  required
-                  [(ngModel)]="user.dataNascimentoUsuario"
-                />
-                <label for="dataNascimentoUsuario" class="label-name">
-                  <span class="content-name"> Data de nascimento: </span>
-                </label>
-              </div>
+            <div class="form">
+              <input
+                type="text"
+                class="form-control"
+                id="telefoneUsuario"
+                required
+                [(ngModel)]="user.telefoneUsuario"
+              />
+              <label for="telefoneUsuario" class="label-name">
+                <span class="content-name">Telefone: </span>
+              </label>
+            </div>
 
-              <div class="form">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="enderecoUsuario"
-                  required
-                  [(ngModel)]="user.enderecoUsuario"
-                />
-                <label for="enderecoUsuario" class="label-name">
-                  <span class="content-name"> Endereço: </span>
-                </label>
-              </div>
+            <div class="form">
+              <input
+                type="email"
+                class="form-control"
+                id="emailUsuario"
+                required
+                [(ngModel)]="user.emailUsuario"
+              />
+              <label for="emailUsuario" class="label-name">
+                <span class="content-name">E-mail: </span>
+              </label>
+            </div>
 
-              <div class="form">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="telefoneUsuario"
-                  required
-                  [(ngModel)]="user.telefoneUsuario"
-                />
-                <label for="telefoneUsuario" class="label-name">
-                  <span class="content-name">Telefone: </span>
-                </label>
-              </div>
+            <div class="form">
+              <input
+                type="password"
+                class="form-control"
+                id="senhaUsuario"
+                required
+                (input)="conferirSenha($event)"
+                value="{{ senha }}"
+              />
+              <label for="senhaUsuario" class="label-name">
+                <span class="content-name">Senha:</span></label
+              >
+            </div>
 
-              <div class="form">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="emailUsuario"
-                  required
-                  [(ngModel)]="user.emailUsuario"
-                />
-                <label for="emailUsuario" class="label-name">
-                  <span class="content-name">E-mail: </span>
-                </label>
-              </div>
+            <div class="form">
+              <input
+                type="password"
+                class="form-control"
+                id="senhaConf"
+                required
+                [(ngModel)]="user.senhaUsuario"
+              />
+              <label for="senhaConf" class="label-name">
+                <span class="content-name"> Confirmar senha:</span></label
+              >
+            </div>
 
-              <div class="form">
-                <input
-                  type="password"
-                  class="form-control"
-                  id="senhaUsuario"
-                  required
-                  (input)="conferirSenha($event)"
-                  value="{{ senha }}"
-                />
-                <label for="senhaUsuario" class="label-name">
-                  <span class="content-name">Senha:</span></label
-                >
-              </div>
+            <div class="d-flex justify-content-center mt-5">
+              <!--button-->
+              <button
+                class="btn btn-green w-50 shadow"
+                type="submit"
+                (click)="cadastrar()"
+              >
+                Cadastrar
+              </button>
+              <!--/button-->
+            </div>
 
-              <div class="form">
-                <input
-                  type="password"
-                  class="form-control"
-                  id="senhaConf"
-                  required
-                  [(ngModel)]="user.senhaUsuario"
-                />
-                <label for="senhaConf" class="label-name">
-                  <span class="content-name"> Confirmar senha:</span></label
-                >
-              </div>
-
-              <div class="d-flex justify-content-center mt-5">
-                <!--button-->
-                <button
-                  class="btn btn-green w-50 shadow"
-                  type="submit"
-                  (click)="cadastrar()"
-                >
-                  Cadastrar
-                </button>
-                <!--/button-->
-              </div>
-
-              <div class="mt-5 d-flex justify-content-end text-muted">
-                Já possui uma conta?&ensp;<a
-                  class="font-weight-bold text-muted"
-                  routerLink="/login"
-                  >Faça Login</a
-                >
-              </div>
+            <div class="mt-5 d-flex justify-content-end text-muted">
+              Já possui uma conta?&ensp;<a
+                class="font-weight-bold text-muted"
+                routerLink="/login"
+                >Faça Login</a
+              >
             </div>
           </div>
         </div>
       </div>
       <!--final-->
-    </div>
 
-    <!--Logotipo -->
-    <div class="d-none col-md-6 d-flex justify-content-center w-100">
-      <div
-        class="card border-0 bg-cadastro w-100 p-5 mt-5 mb-5 card-hover"
-        style="width: 14rem"
-      >
+      <!--segunda linha - formulário-->
+      <!--final-->
+      <!-- </div> -->
+
+      <!--Logotipo -->
+      <div class="d-none col-md-6 d-flex justify-content-center w-100">
+        <div
+          class="card border-0 bg-cadastro w-100 p-5 mt-5 mb-5 card-hover"
+          style="width: 14rem"
+        ></div>
+      </div>
+      <!--/Logotipo -->
     </div>
-    </div>
-    <!--/Logotipo -->
   </div>
 </div>
