@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Produto } from '../../model/Produto';
 import { ProdutoService } from '../../services/produto.service';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 @Component({
   selector: 'app-form-produto',
@@ -25,7 +26,8 @@ export class FormProdutoComponent implements OnInit {
   constructor(
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private router: Router
+    private router: Router,
+    private alerta: AlertasService
   ) {}
 
   findAllCategoria() {
@@ -58,7 +60,7 @@ export class FormProdutoComponent implements OnInit {
 
     if (token === null && admin !== 'true') {
       this.router.navigate(['/login']);
-      return alert('Você precisar ser administrador para entrar nessa página!');
+      this.alerta.showAlertDanger('Você precisar ser administrador para entrar nessa página!');
     }
 
     this.findAllCategoria();
@@ -76,13 +78,13 @@ export class FormProdutoComponent implements OnInit {
       this.produto.estoqueProduto == null ||
       this.produto.imagemProduto == null
     ) {
-      alert('Preencha os campos corretamente antes de cadastrar!');
+      this.alerta.showAlertDanger('Preencha os campos corretamente antes de cadastrar!');
     } else {
       this.produtoService
         .postProduto(this.produto)
         .subscribe((resp: Produto) => {
           this.produto = resp;
-          alert('Novo produto cadastrado com sucesso!');
+          this.alerta.showAlertSuccess('Novo produto cadastrado com sucesso!');
           this.router.navigate(['/dashboard']);
         });
     }

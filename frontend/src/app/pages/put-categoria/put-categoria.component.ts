@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Categoria } from 'src/app/model/Categoria';
 import { Produto } from 'src/app/model/Produto';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { CategoriaService } from 'src/app/services/categoria.service';
 import { ProdutoService } from 'src/app/services/produto.service';
 
@@ -22,7 +23,8 @@ export class PutCategoriaComponent implements OnInit {
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alerta: AlertasService
   ) {}
 
   ngOnInit() {
@@ -31,7 +33,7 @@ export class PutCategoriaComponent implements OnInit {
 
     if (token === null && admin !== 'true') {
       this.router.navigate(['/login']);
-      return alert('Você precisar ser administrador para entrar nessa página!');
+      this.alerta.showAlertDanger('Você precisar ser administrador para entrar nessa página!');
     }
 
     window.scroll(0, 0);
@@ -57,11 +59,11 @@ export class PutCategoriaComponent implements OnInit {
       (resp: Categoria) => {
         this.categoria = resp;
         this.router.navigate(['/dashboard']);
-        alert('Categoria alterada com sucesso!');
+        this.alerta.showAlertSuccess('Categoria alterada com sucesso!');
       },
       (err) => {
         if (err.status == '500') {
-          alert('Preencha todos os campos corretamente antes de enviar!');
+          this.alerta.showAlertDanger('Preencha todos os campos corretamente antes de enviar!');
         }
       }
     );

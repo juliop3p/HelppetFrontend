@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CarrinhoService } from './../../services/carrinho.service';
 import { IPayPalConfig, ICreateOrderRequest } from 'ngx-paypal';
 import { Produto } from 'src/app/model/Produto';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -20,7 +21,8 @@ export class CarrinhoComponent implements OnInit {
 
   constructor(
     private carrinhoService: CarrinhoService,
-    private router: Router
+    private router: Router,
+    private alerta: AlertasService
   ) {}
 
   ngOnInit(): void {
@@ -28,7 +30,7 @@ export class CarrinhoComponent implements OnInit {
 
     if (token === null) {
       this.router.navigate(['/login']);
-      return alert('Você precisar estar logado para entrar nessa página!');
+      this.alerta.showAlertSuccess('Você precisar estar logado para entrar nessa página!');
     }
     this.initConfig();
     window.scroll(0, 0);
