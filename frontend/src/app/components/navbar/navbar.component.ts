@@ -1,8 +1,9 @@
+import { Component, OnInit } from '@angular/core';
+import { NgxNavigationWithDataComponent } from 'ngx-navigation-with-data';
 import { ProdutoService } from 'src/app/services/produto.service';
 import { Produto } from 'src/app/model/Produto';
 import { CategoriaService } from './../../services/categoria.service';
 import { AuthService } from './../../services/auth.service';
-import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Categoria } from './../../model/Categoria';
 import {
@@ -29,11 +30,12 @@ export class NavbarComponent implements OnInit {
     public authService: AuthService,
     private router: Router,
     private categoriaService: CategoriaService,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    public navCtrl: NgxNavigationWithDataComponent
   ) {}
 
   produto: string;
-  listaProduto: Produto[];
+  listaProduto: Produto[] = [];
   listaCategoria: string[];
   user: string;
 
@@ -59,8 +61,9 @@ export class NavbarComponent implements OnInit {
     this.produtoService
       .getByNomeProduto(this.produto)
       .subscribe((resp: Produto[]) => {
+        this.produto = '';
         this.listaProduto = resp;
-        this.router.navigate(['/home', { state: this.listaProduto }]);
+        this.navCtrl.navigate('/home', { state: this.listaProduto });
       });
   }
 }
