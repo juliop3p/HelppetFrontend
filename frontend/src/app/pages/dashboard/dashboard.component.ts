@@ -4,6 +4,7 @@ import { CategoriaService } from './../../services/categoria.service';
 import { ProdutoService } from './../../services/produto.service';
 import { Categoria } from './../../model/Categoria';
 import { Produto } from './../../model/Produto';
+import { AlertasService } from 'src/app/service/alertas.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -34,7 +35,8 @@ export class DashboardComponent implements OnInit {
   constructor(
     private categoriaService: CategoriaService,
     private produtoService: ProdutoService,
-    private router: Router
+    private router: Router,
+    private alerta: AlertasService
   ) {}
 
   ngOnInit() {
@@ -43,7 +45,7 @@ export class DashboardComponent implements OnInit {
 
     if (token === null && admin !== 'true') {
       this.router.navigate(['/login']);
-      return alert('Você precisar ser administrador para entrar nessa página!');
+      this.alerta.showAlertDanger('Você precisar ser administrador para entrar nessa página!');
     }
 
     this.findAllCategoria();
