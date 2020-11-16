@@ -36,12 +36,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private produtoService: ProdutoService,
     private categoriaService: CategoriaService,
-    private carrinhoService: CarrinhoService,
-    private router: Router
-  ) {
-    const navigation = this.router.getCurrentNavigation();
-    console.log(navigation);
-  }
+    private carrinhoService: CarrinhoService
+  ) {}
 
   ngOnInit() {
     window.scroll(0, 0);
