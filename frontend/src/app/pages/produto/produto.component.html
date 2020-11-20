@@ -19,9 +19,10 @@
     </div>
 
     <div class="col-md-4 col-12 pl-md-2 px-0">
-      <div class="bg-light shadow w-100 p-5">
+      <div class="bg-light shadow w-100 p-5 border">
         <h3>
           Preço:
+          <br /><br />
           <span class="text-success">
             {{
               produto.precoProduto.toLocaleString("pt-br", {
@@ -31,7 +32,7 @@
             }}</span
           >
           à vista
-        </h3>
+        </h3><br />
         <p class="">{{ produto.nomeProduto }}</p>
         <div>
           <small class="text-muted">Quantidade em estoque: </small
@@ -39,10 +40,10 @@
         </div>
       </div>
 
-      <div class="p-2">
+      <div class="p-2 mt-3">
         <button
           (click)="adicionarCarrinho(produto)"
-          class="btn btn-lg btn-green w-100"
+          class="btn btn-lg btn-green w-100 shadow"
           routerLink="/carrinho"
           role="button"
         >
@@ -52,11 +53,11 @@
       </div>
       <div class="p-2">
         <button
-          class="btn btn-lg btn-blue w-100"
+          class="btn btn-lg btn-blue w-100 shadow"
           (click)="adicionarCarrinho(produto)"
           role="button"
         >
-          <i class="fas fa-heart mr-2"></i>Doar
+          <i class="fas fa-heart mr-2 shadow"></i>Doar
         </button>
       </div>
     </div>
