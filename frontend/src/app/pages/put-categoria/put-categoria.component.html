@@ -4,7 +4,7 @@
     >
       <div class="col-md-12 text-center"></div>
       <div>
-        <p class="text-center mb-4 p-3 m-3 letra">Cadastre uma nova categoria</p>
+        <p class="text-center mb-4 p-3 font-weight-bold text-green letra">Editar Categoria</p>
   
         <div class="form-group">
           <label class="col-md-8" for="texto "> Categoria:</label>
@@ -42,12 +42,12 @@
         <div class="row mb-5">
           <div class="col-md-12 d-flex justify-content-center">
             <button
-              class="btn btn-outline-success w-50 mr-4"
-              (click)="salvar()"
+              class="btn btn-green w-50 mr-4 shadow"
+              (click)="salvar()" 
             >
               Salvar
             </button>
-            <a routerLink="/dashboard" class="btn btn-outline-danger w-50"
+            <a routerLink="/dashboard" class="btn btn-danger w-50 shadow"
               >Cancelar</a
             >
           </div>
