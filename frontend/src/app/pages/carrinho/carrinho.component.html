@@ -12,7 +12,7 @@
         <p class="text-uppercase font-weight-bold">Nome do produto</p>
       </div>
       <div class="col-10 mx-auto col-lg-2">
-        <p class="text-uppercase font-weight-bold">Preço R$</p>
+        <p class="text-uppercase font-weight-bold">Preço</p>
       </div>
       <div class="col-10 mx-auto col-lg-2">
         <p class="text-uppercase font-weight-bold">Quantidade</p>
@@ -77,7 +77,7 @@
         <div class="col-10 mx-auto col-lg-2">
           <div class="cart-icon cursor-pointer">
             <i
-              class="fas fa-trash text-warning"
+              class="fas fa-trash text-danger"
               (click)="removeProduto(item.idProduto)"
             ></i>
           </div>
@@ -109,7 +109,6 @@
       <h5 class="d-flex justify-content-between">
         <span class="text-title"> subtotal: </span>
         <strong>
-          R$
           {{
             subTotal.toLocaleString("pt-br", {
               style: "currency",
@@ -121,7 +120,6 @@
       <h5 class="d-flex justify-content-between">
         <span class="text-title"> frete: </span>
         <strong>
-          R$
           {{
             frete.toLocaleString("pt-br", {
               style: "currency",
@@ -133,7 +131,6 @@
       <h5 class="d-flex justify-content-between">
         <span class="text-title"> total: </span>
         <strong>
-          R$
           {{
             total.toLocaleString("pt-br", {
               style: "currency",
