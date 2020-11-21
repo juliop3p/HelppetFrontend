@@ -1,28 +1,33 @@
-.container-card .card {
+.container .card {
   position: relative;
   width: 320px;
   height: 450px;
   background: white;
-  border-radius: 20px;
+  border-radius: 5px;
   overflow: hidden;
 }
 
-.container-card .card:before {
+.container .card:before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--color-blue);
+  background: linear-gradient(
+    90deg,
+    rgb(3, 31, 189) 0%,
+    rgb(0, 125, 197) 60%,
+    rgb(24, 174, 219) 100%
+  );
   clip-path: circle(150px at 80% 20%);
   transition: 0.5s ease-in-out;
 }
 
-.container-card .card:hover:before {
+.container .card:hover:before {
   clip-path: circle(300px at 80% -20%);
 }
-.container-card .card .imgBx {
+.container .card .imgBx {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -32,12 +37,12 @@
   transition: 0.8s;
 }
 
-.container-card .card:hover .imgBx {
+.container .card:hover .imgBx {
   top: 0%;
   transform: translateY(0%);
 }
 
-.container-card .card .imgBx img {
+.container .card .imgBx img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -45,7 +50,7 @@
   width: 270px;
 }
 
-.container-card .card .contentBx {
+.container .card .contentBx {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -55,7 +60,7 @@
   z-index: 9999;
 }
 
-.container-card .card .contentBx {
+.container .card .contentBx {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -65,11 +70,11 @@
   z-index: 9999;
 }
 
-.container-card .card:hover .contentBx {
+.container .card:hover .contentBx {
   height: 270px;
 }
 
-.container-card .card .contentBx h2 {
+.container .card .contentBx h2 {
   font-size: 20px;
   position: relative;
   font-weight: 600;
@@ -81,7 +86,7 @@
   font-size: 24px;
 }
 
-.container-card .card .contentBx .size .container-card .card .contentBx .color {
+.container .card .contentBx .size .container .card .contentBx .color {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,20 +96,20 @@
   visibility: hidden;
 }
 
-.container-card .card:hover .contentBx .size {
+.container .card:hover .contentBx .size {
   opacity: 1;
   visibility: visible;
   transition-delay: 0.5s;
 }
 
-.container-card .card:hover .contentBx .color {
+.container .card:hover .contentBx .color {
   opacity: 1;
   visibility: visible;
   transition-delay: 0.6s;
 }
 
-.container-card .card .contentBx .size h3,
-.container-card .card .contentBx .color h3 {
+.container .card .contentBx .size h3,
+.container .card .contentBx .color h3 {
   color: rgb(48, 48, 48);
   font-weight: 300;
   font-size: 14px;
@@ -113,7 +118,7 @@
   margin-right: 10px;
 }
 
-.container-card .card .contentBx .size span {
+.container .card .contentBx .size span {
   width: 26px;
   height: 26px;
   text-align: center;
@@ -129,11 +134,11 @@
   cursor: pointer;
 }
 
-.container-card .card .contentBx .size span:hover {
+.container .card .contentBx .size span:hover {
   background: #9bdc28;
 }
 
-.container-card .card .contentBx .color span {
+.container .card .contentBx .color span {
   width: 26px;
   height: 26px;
   text-align: center;
@@ -149,23 +154,23 @@
   cursor: pointer;
 }
 
-.container-card .card .contentBx .color span:hover {
+.container .card .contentBx .color span:hover {
   background: #9bdc28;
 }
 
-.container-card .card .contentBx .color span:nth-child(2) {
+.container .card .contentBx .color span:nth-child(2) {
   background: #9bdc28;
 }
 
-.container-card .card .contentBx .color span:nth-child(3) {
-  background: #03a9;
+.container .card .contentBx .color span:nth-child(3) {
+  background: rgba(0, 51, 170, 0.692);
 }
 
-.container-card .card .contentBx .color span:nth-child(4) {
+.container .card .contentBx .color span:nth-child(4) {
   background: #e91e63;
 }
 
-.container-card .card .contentBx a {
+.container .card .contentBx a {
   display: inline-block;
   padding: 10px 20px;
   background: #fff;
@@ -179,8 +184,12 @@
   transition: 0.5s;
 }
 
-.container-card .card:hover .contentBx a {
+.container .card:hover .contentBx a {
   opacity: 1;
   transform: translateY(0px);
   transition-delay: 0.75s;
+}
+
+.contentBx strong {
+  display: block;
 }

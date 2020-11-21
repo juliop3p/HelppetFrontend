@@ -23,7 +23,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, rgb(3, 31, 189) 0%, rgb(0, 125,197) 60%, rgb(24, 174, 219) 100%);
+  background: linear-gradient(
+    90deg,
+    rgb(3, 31, 189) 0%,
+    rgb(0, 125, 197) 60%,
+    rgb(24, 174, 219) 100%
+  );
   clip-path: circle(150px at 80% 20%);
   transition: 0.5s ease-in-out;
 }
@@ -192,4 +197,8 @@
   opacity: 1;
   transform: translateY(0px);
   transition-delay: 0.75s;
+}
+
+.contentBx strong {
+  display: block;
 }
