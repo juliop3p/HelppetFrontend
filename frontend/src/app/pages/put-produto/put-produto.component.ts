@@ -62,7 +62,9 @@ export class PutProdutoComponent implements OnInit {
 
     if (token === null && admin !== 'true') {
       this.router.navigate(['/login']);
-      this.alerta.showAlertDanger('Você precisar ser administrador para entrar nessa página!');
+      this.alerta.showAlertDanger(
+        'Você precisar ser administrador para entrar nessa página!'
+      );
     }
 
     this.findAllCategoria();
@@ -74,7 +76,6 @@ export class PutProdutoComponent implements OnInit {
   findByIdCategoria(id: number) {
     this.produtoService.getByIdProduto(id).subscribe((resp: Produto) => {
       this.produto = resp;
-      console.log(resp);
     });
   }
 
@@ -90,7 +91,9 @@ export class PutProdutoComponent implements OnInit {
       this.produto.estoqueProduto == null ||
       this.produto.imagemProduto == null
     ) {
-      this.alerta.showAlertDanger('Preencha os campos corretamente antes de cadastrar!');
+      this.alerta.showAlertDanger(
+        'Preencha os campos corretamente antes de cadastrar!'
+      );
     } else {
       this.produtoService
         .postProduto(this.produto)

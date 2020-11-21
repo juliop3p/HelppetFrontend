@@ -33,7 +33,9 @@ export class PutCategoriaComponent implements OnInit {
 
     if (token === null && admin !== 'true') {
       this.router.navigate(['/login']);
-      this.alerta.showAlertDanger('Você precisar ser administrador para entrar nessa página!');
+      this.alerta.showAlertDanger(
+        'Você precisar ser administrador para entrar nessa página!'
+      );
     }
 
     window.scroll(0, 0);
@@ -47,7 +49,6 @@ export class PutCategoriaComponent implements OnInit {
   findByIdCategoria(id: number) {
     this.categoriaService.getByIdCategoria(id).subscribe((resp: Categoria) => {
       this.categoria = resp;
-      console.log(resp);
     });
   }
 
@@ -63,7 +64,9 @@ export class PutCategoriaComponent implements OnInit {
       },
       (err) => {
         if (err.status == '500') {
-          this.alerta.showAlertDanger('Preencha todos os campos corretamente antes de enviar!');
+          this.alerta.showAlertDanger(
+            'Preencha todos os campos corretamente antes de enviar!'
+          );
         }
       }
     );

@@ -19,7 +19,7 @@
     </div>
 
     <div class="col-md-4 col-12 pl-md-2 px-0">
-      <div class="bg-light shadow w-100 p-5 border">
+      <div class="bg-white shadow w-100 p-5 border">
         <h3>
           Preço:
           <br /><br />
@@ -32,12 +32,14 @@
             }}</span
           >
           à vista
-        </h3><br />
+        </h3>
+        <br />
         <p class="">{{ produto.nomeProduto }}</p>
         <div>
           <small class="text-muted">Quantidade em estoque: </small
           >{{ produto.estoqueProduto }}
         </div>
+        <small class="text-muted">Marca: {{ produto.marcaProduto }}</small>
       </div>
 
       <div class="p-2 mt-3">
@@ -72,6 +74,7 @@
     <p class="card-text lead w-100">
       {{ produto.descricaoProduto }}
     </p>
+    <small class="text-muted mt-3">Marca: {{ produto.marcaProduto }}</small>
   </div>
 </div>
 
@@ -85,7 +88,10 @@
       <div *ngFor="let item of listaProduto">
         <div class="container-card">
           <div class="card mx-2 my-2">
-            <a [routerLink]="['/produto', item.idProduto]" class="imgBx">
+            <a
+              (click)="getProduto(item.idProduto)"
+              class="imgBx cursor-pointer"
+            >
               <img src="{{ item.imagemProduto }}" alt="Produto" />
             </a>
             <div class="contentBx">
