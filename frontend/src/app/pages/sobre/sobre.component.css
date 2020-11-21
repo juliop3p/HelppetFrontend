@@ -10,10 +10,22 @@
 }
 
 .cor-titulo {
+  color: white;
+}
+.cor{
   color: #07b154;
 }
+
+.card-text{
+color:white;
+}
+
 .letra {
   font-size: 25x;
+}
+
+.bg{
+  background-color:#06a84f;
 }
 
 .parallax {
@@ -100,3 +112,5 @@
 .button:hover {
   opacity: 0.8;
 }
+
+

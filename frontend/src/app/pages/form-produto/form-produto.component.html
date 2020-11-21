@@ -42,7 +42,7 @@
       <div class="form-group mt-5">
         <div class="form-row">
           <div class="col pr-3">
-            <label for="subcategoria">Sub Categoria:</label>
+            <label for="subcategoria">Subcategoria:</label>
             <select
               name="subcategoria"
               class="form-control"
@@ -50,7 +50,7 @@
               [(ngModel)]="subSecao"
               (change)="findAllBySubCategoria()"
             >
-              <option selected>Selecione uma sub categoria</option>
+              <option selected>Selecione uma subcategoria</option>
               <option *ngFor="let item of listaSubSecao" value="{{ item }}">
                 {{ item }}
               </option>
