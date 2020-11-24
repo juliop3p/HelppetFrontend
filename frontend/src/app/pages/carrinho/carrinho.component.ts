@@ -27,6 +27,7 @@ export class CarrinhoComponent implements OnInit {
 
   ngOnInit(): void {
     const token = localStorage.getItem('token');
+    window.scroll(0, 0);
 
     if (token === null) {
       this.router.navigate(['/login']);
