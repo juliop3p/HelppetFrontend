@@ -53,4 +53,8 @@ export class ProdutoComponent implements OnInit {
       this.listaProduto.forEach((produto) => (produto.quantidade = 1));
     });
   }
+
+  scrollTop() {
+    window.scroll(0, 0);
+  }
 }
