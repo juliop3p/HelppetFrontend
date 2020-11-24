@@ -57,6 +57,7 @@ export class PutProdutoComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.scroll(0, 0);
     const token = localStorage.getItem('token');
     const admin = localStorage.getItem('admin');
 
