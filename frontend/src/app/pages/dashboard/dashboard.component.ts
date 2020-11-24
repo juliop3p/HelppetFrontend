@@ -40,6 +40,7 @@ export class DashboardComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    window.scroll(0, 0);
     const token = localStorage.getItem('token');
     const admin = localStorage.getItem('admin');
 
@@ -70,5 +71,9 @@ export class DashboardComponent implements OnInit {
 
   changeTab() {
     this.showProdutos = !this.showProdutos;
+  }
+
+  scrollTop() {
+    window.scroll(0, 0);
   }
 }
