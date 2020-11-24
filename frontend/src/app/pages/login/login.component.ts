@@ -13,7 +13,9 @@ export class LoginComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    window.scroll(0, 0);
+  }
 
   entrar() {
     this.authService.logar(this.userLogin).subscribe((resp: UserLogin) => {

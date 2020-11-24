@@ -34,8 +34,13 @@ export class ProdutoComponent implements OnInit {
 
     this.idProduto = this.route.snapshot.params['id'];
 
-    this.findByIdProduto();
     this.findAllProduto();
+    this.findByIdProduto();
+  }
+
+  getProduto(id: number) {
+    this.idProduto = id;
+    this.findByIdProduto();
   }
 
   adicionarCarrinho(produto: Produto) {
@@ -47,5 +52,9 @@ export class ProdutoComponent implements OnInit {
       this.listaProduto = resp.slice(0, 3);
       this.listaProduto.forEach((produto) => (produto.quantidade = 1));
     });
+  }
+
+  scrollTop() {
+    window.scroll(0, 0);
   }
 }

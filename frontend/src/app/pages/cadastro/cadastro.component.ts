@@ -15,7 +15,9 @@ export class CadastroComponent implements OnInit {
 
   constructor(private authService: AuthService, private router: Router, private alerta: AlertasService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    window.scroll(0, 0);
+  }
 
   conferirSenha(event: any) {
     this.senha = event.target.value;
